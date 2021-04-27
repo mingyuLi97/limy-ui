@@ -1,0 +1,23 @@
+{
+  "name": "limy-ui",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:mingyuLi97/limy-ui.git",
+  "author": "limy <mingyuli1997@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "commit": "cz"
+  },
+  "dependencies": {
+    "vue": "^2.6.12"
+  },
+  "devDependencies": {
+    "commitizen": "^4.2.3",
+    "cz-conventional-changelog": "^3.3.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
+  }
+}
