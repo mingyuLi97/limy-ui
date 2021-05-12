@@ -1,0 +1,23 @@
+{
+  "name": "@mfelibs/aio-component",
+  "version": "0.1.0",
+  "description": "新浪公共组件库",
+  "private": false,
+  "scripts": {
+    "dev": "marax dev",
+    "build": "marax build"
+  },
+  "dependencies": {
+    "@mfelibs/base-css": "^3.1.16"
+  },
+  "devDependencies": {
+    "@mara/x": "^3.0.0"
+  },
+  "engines": {
+    "node": ">= 8.0.0",
+    "npm": ">= 3.0.0"
+  },
+  "license": "MIT",
+  "author": "",
+  "repository": ""
+}
