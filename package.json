@@ -1,17 +1,29 @@
 {
-  "name": "@mfelibs/aio-component",
-  "version": "0.1.0",
+  "name": "@mfelibs/sina-aio-components",
+  "version": "0.1.8",
   "description": "新浪公共组件库",
   "private": false,
+  "files": [
+    "src/",
+    "types/"
+  ],
   "scripts": {
     "dev": "marax dev",
-    "build": "marax build"
+    "beta": "npm version --no-git-tag-version prerelease && npm publish --tag=beta",
+    "release": "npm version --no-git-tag-version patch && npm publish"
   },
+  "module": "src/index.ts",
+  "types": "types/index.d.ts",
   "dependencies": {
-    "@mfelibs/base-css": "^3.1.16"
+    "@mfelibs/aio-plugins": "^1.0.5",
+    "@mfelibs/base-css": "^3.1.16",
+    "vue": "^2.6.12",
+    "vue-class-component": "^7.2.3",
+    "vue-property-decorator": "^8.4.2"
   },
   "devDependencies": {
-    "@mara/x": "^3.0.0"
+    "@mara/x": "^3.0.0",
+    "typescript": "^3.9.3"
   },
   "engines": {
     "node": ">= 8.0.0",

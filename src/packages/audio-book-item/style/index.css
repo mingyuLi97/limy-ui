@@ -58,6 +58,6 @@
   content: '';
   width: 0.24rem;
   height: 0.2rem;
-  background: url(../img/ic_listen.png) center/contain no-repeat;
+  background: url(./img/ic_listen.png) center/contain no-repeat;
   margin-right: 0.13rem;
 }

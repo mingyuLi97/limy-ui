@@ -2,7 +2,7 @@
   <!-- <section class="labour_card"> -->
     <!-- <section class="aio_listen"> -->
       <div class="aio_listen_feed">
-        <AudioBookItem
+        <AioAudioBookItem
 
           title="测试的"
           intro="234 "
@@ -16,12 +16,11 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component, Prop } from '@mfelibs/supercomp-property-decorator';
-// import AudioBookItem from '~/components/audio-book-item';
-
+import { Vue, Component, Prop } from "vue-property-decorator";
+import { AioAudioBookItem } from '~/index';
 @Component({
   components: {
-    // AudioBookItem
+    AioAudioBookItem
   }
 })
 export default class App extends Vue {
