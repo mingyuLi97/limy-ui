@@ -1,6 +1,6 @@
 {
   "name": "@mfelibs/aio-snack-bar",
-  "version": "1.0.3-alpha.7",
+  "version": "1.0.3",
   "description": "hb 模拟 native snackbar 弹窗",
   "keywords": [
     "snack-bar"
