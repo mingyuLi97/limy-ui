@@ -25,14 +25,15 @@
 
 <script lang="ts">
 import { Vue, Component, Prop, Watch } from 'vue-property-decorator';
-import './index.css'
+import './index.css';
 
 @Component({
   components: {}
 })
 export default class SnackBar extends Vue {
-  onClose: () => void = null; // 点击关闭按钮回调
+  onClose: () => void = null; // 当弹窗关闭
   onClickButton: () => void = null; // 点击按钮回调
+  onUserClickClose: () => void = null; // 当用户点击关闭按钮
   icon: string = null;
   content: string = null;
   btnText: string = null;
@@ -73,11 +74,18 @@ export default class SnackBar extends Vue {
 
   handleBottonClick() {
     console.log(`[SnackBar] 点击了按钮`);
-    this.onClickButton()
+    this.onClickButton();
+  }
+
+  onClickClose() {
+    if (typeof this.onUserClickClose === 'function') {
+      console.log(`[SnackBar] 执行用户关闭方法`);
+      this.onUserClickClose();
+    }
+    this.handleClose()
   }
 
   handleClose() {
-    console.log(`[SnackBar] 执行用户关闭方法`);
     this.visible = false;
     if (typeof this.onClose === 'function') {
       this.onClose();

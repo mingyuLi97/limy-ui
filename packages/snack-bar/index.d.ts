@@ -7,6 +7,7 @@ export interface IOptions {
     commentBarHeight: number;
     onClickButton?: () => void;
     onClose?: () => void;
+    onUserClickClose?: () => void;
 }
 declare module 'vue/types/vue' {
     interface Vue {
