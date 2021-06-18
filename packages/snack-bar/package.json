@@ -1,6 +1,6 @@
 {
   "name": "@mfelibs/aio-snack-bar",
-  "version": "1.0.3-alpha.0",
+  "version": "1.0.3-alpha.1",
   "description": "hb 模拟 native snackbar 弹窗",
   "keywords": [
     "snack-bar"
@@ -23,5 +23,5 @@
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 11"
   },
-  "gitHead": "4519d22a1d2dc724abc3f48670d1fced1ee661ff"
+  "gitHead": "ad5c8dd644e1a7647bd47811ba6b228a95ccff72"
 }
