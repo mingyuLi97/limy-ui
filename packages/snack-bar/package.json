@@ -14,14 +14,14 @@
   ],
   "publishConfig": {
     "access": "public",
-    "registry": "http://cnpm.sina.com.cn/package"
+    "registry": "http://cnpm.sina.com.cn/package/@mfelibs/"
   },
   "repository": {
     "type": "git",
     "url": "ssh://git@gitlab.weibo.cn:2222/SINA_MFE_COMPONENTS/sina-aio-components.git"
   },
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "test": "echo \"Error: run tests from root\" && exit 11"
   },
-  "gitHead": "4151ccc0687be0de5be7fdbf47dc4b24a2aec518"
+  "gitHead": "4519d22a1d2dc724abc3f48670d1fced1ee661ff"
 }
