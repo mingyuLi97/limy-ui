@@ -10,7 +10,7 @@
   >
     <div class="aio-snack-bar__wrapper">
       <div class="aio-snack-bar__icon">
-        <img class="img_width" src="./img/ic_snack_bar.png" />
+        <img class="img_width" :src="icon" />
       </div>
 
       <span class="aio-snack-bar__content">{{ content }}</span>
@@ -33,6 +33,7 @@ import './index.css'
 export default class SnackBar extends Vue {
   onClose: () => void = null; // 点击关闭按钮回调
   onClickButton: () => void = null; // 点击按钮回调
+  icon: string = null;
   content: string = null;
   btnText: string = null;
   duration: number = 3000; // 显示多长时间（ms） 默认为 3000，传 0 则不消失
