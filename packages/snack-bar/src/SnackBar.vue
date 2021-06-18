@@ -18,7 +18,7 @@
       <div class="aio-snack-bar__button" @click="handleBottonClick">
         {{ btnText }}
       </div>
-      <div class="aio-snack-bar__close" @click="handleClose" />
+      <div class="aio-snack-bar__close" @click="onClickClose" />
     </div>
   </div>
 </template>
@@ -66,7 +66,7 @@ export default class SnackBar extends Vue {
     if (this.duration > 0) {
       this.timer = setTimeout(() => {
         if (!this.visible) {
-          this.handleClose();
+          this.close();
         }
       }, this.duration);
     }
@@ -82,10 +82,10 @@ export default class SnackBar extends Vue {
       console.log(`[SnackBar] 执行用户关闭方法`);
       this.onUserClickClose();
     }
-    this.handleClose()
+    this.close()
   }
 
-  handleClose() {
+  close() {
     this.visible = false;
     if (typeof this.onClose === 'function') {
       this.onClose();

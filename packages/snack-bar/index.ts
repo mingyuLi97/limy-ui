@@ -35,7 +35,7 @@ function show(options: IOptions) {
 }
 
 function close() {
-  instance && instance.$options.methods.handleClose.bind(instance)();
+  instance && instance.$options.methods.close.bind(instance)();
 }
 
 export default {
