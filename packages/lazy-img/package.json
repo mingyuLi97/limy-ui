@@ -21,5 +21,5 @@
     "test": "echo \"Error: run tests from root\" && exit 11",
     "build:tsc": "npx tsc index.ts -d --emitDeclarationOnly"
   },
-  "gitHead": "51e85536b7782988899e679e3d4b92641557621f"
+  "gitHead": "ac92a7eb5dc89a25b9ef5d23ce5cc071bed1450c"
 }
