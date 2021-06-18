@@ -1,6 +1,6 @@
 {
   "name": "@mfelibs/aio-lazy-img",
-  "version": "1.0.1-alpha.1",
+  "version": "1.0.1-alpha.2",
   "description": "图片懒加载",
   "keywords": [
     "lazy-img"
