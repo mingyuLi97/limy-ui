@@ -11,7 +11,7 @@
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
-    "strict": true,
+    "strict": false,
     "noImplicitAny": false,
     "forceConsistentCasingInFileNames": true,
     "module": "esnext",
@@ -26,6 +26,7 @@
   },
   "include": [
     "types/*.ts",
+    "packages/**/*",
     "src/**/*.ts",
     "src/**/*.tsx",
     "src/**/*.vue",

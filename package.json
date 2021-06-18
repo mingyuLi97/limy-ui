@@ -2,7 +2,10 @@
   "name": "@mfelibs/sina-aio-components",
   "version": "0.1.8",
   "description": "新浪公共组件库",
-  "private": false,
+  "private": true,
+  "workspaces":[
+    "packages/*"
+  ],
   "files": [
     "src/",
     "types/"
@@ -17,12 +20,15 @@
   "dependencies": {
     "@mfelibs/aio-plugins": "^1.0.5",
     "@mfelibs/base-css": "^3.1.16",
-    "vue": "^2.6.12",
+    "vue": "^2.6.14",
     "vue-class-component": "^7.2.3",
+    "@mfelibs/universal-framework": "^0.3.256",
     "vue-property-decorator": "^8.4.2"
   },
   "devDependencies": {
     "@mara/x": "^3.0.0",
+    "lerna": "^4.0.0",
+    "vue-template-compiler": "^2.6.11",
     "typescript": "^3.9.3"
   },
   "engines": {
