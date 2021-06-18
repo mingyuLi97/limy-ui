@@ -9,9 +9,6 @@
   "homepage": "",
   "module": "index.ts",
   "types": "index.d.ts",
-  "files": [
-    "lib"
-  ],
   "publishConfig": {
     "access": "public",
     "registry": "http://cnpm.sina.com.cn/package/@mfelibs/"
