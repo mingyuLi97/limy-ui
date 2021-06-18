@@ -1,0 +1,23 @@
+{
+  "name": "snack-bar",
+  "version": "1.0.0",
+  "description": "hb 模拟 native snackbar 弹窗",
+  "keywords": [
+    "snack-bar"
+  ],
+  "author": "limy <mingyu6@staff.sina.com.cn>",
+  "homepage": "",
+  "license": "ISC",
+  "module": "index.ts",
+  "types": "types/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@gitlab.weibo.cn:2222/SINA_MFE_COMPONENTS/sina-aio-components.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  }
+}
