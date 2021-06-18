@@ -7,9 +7,9 @@
   ],
   "author": "limy <mingyu6@staff.sina.com.cn>",
   "homepage": "",
-  "license": "ISC",
+  "license": "MIT",
   "module": "index.ts",
-  "types": "types/index.d.ts",
+  "types": "index.d.ts",
   "files": [
     "lib"
   ],
@@ -20,5 +20,5 @@
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
-  "gitHead": "89626d88f644a7547329fc53d2a847f96f708a67"
+  "gitHead": "ba155727e4b531b4a358833319e0bda90e08e071"
 }
