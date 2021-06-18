@@ -1,6 +1,6 @@
 {
   "name": "@mfelibs/aio-snack-bar",
-  "version": "1.0.2-alpha.8",
+  "version": "1.0.2-alpha.9",
   "description": "hb 模拟 native snackbar 弹窗",
   "keywords": [
     "snack-bar"
@@ -12,6 +12,10 @@
   "files": [
     "lib"
   ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "http://cnpm.sina.com.cn/package"
+  },
   "repository": {
     "type": "git",
     "url": "ssh://git@gitlab.weibo.cn:2222/SINA_MFE_COMPONENTS/sina-aio-components.git"
@@ -19,5 +23,5 @@
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
-  "gitHead": "c375237a5e264e507cb0bf1fe62748c827432e1b"
+  "gitHead": "4151ccc0687be0de5be7fdbf47dc4b24a2aec518"
 }
