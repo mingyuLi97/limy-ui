@@ -18,7 +18,8 @@
     "url": "ssh://git@gitlab.weibo.cn:2222/SINA_MFE_COMPONENTS/sina-aio-components.git"
   },
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 11"
+    "test": "echo \"Error: run tests from root\" && exit 11",
+    "build:tsc": "npx tsc index.ts -d --emitDeclarationOnly"
   },
-  "gitHead": "d0d6a357f665b809da4e2b385b96777426feaa2c"
+  "gitHead": "8423056c8d6c6b72deb3639da49e8d2b649397dc"
 }

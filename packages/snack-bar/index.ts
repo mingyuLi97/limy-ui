@@ -1,6 +1,7 @@
 import Vue from 'vue';
 //@ts-ignore
 import SnackBar from './src/SnackBar.vue';
+const SnackBarConstructor = Vue.extend(SnackBar);
 
 export interface IOptions {
   content: string;
@@ -15,23 +16,32 @@ export interface IOptions {
 
 declare module 'vue/types/vue' {
   interface Vue {
-    $SnackBar: typeof SnackBarShow;
+    $SnackBar: {
+      show: typeof show;
+      close: typeof close;
+    };
   }
 }
 
-const SnackBarConstructor = Vue.extend(SnackBar);
+let instance = null;
 
-export const SnackBarShow = function(options: IOptions) {
-  const instance = new SnackBarConstructor({
+function show(options: IOptions) {
+  instance = new SnackBarConstructor({
     data: options
   });
   instance.$mount();
   document.body.appendChild(instance.$el);
-};
+}
+
+function close() {
+  instance && instance.$options.methods.handleClose.bind(instance)();
+}
 
 export default {
   install: () => {
     console.log(`[SnackBar] 注册 SnackBar`);
-    Vue.prototype.$SnackBar = SnackBarShow;
-  }
+    Vue.prototype.$SnackBar = show;
+  },
+  show,
+  close
 };

@@ -10,11 +10,17 @@ export interface IOptions {
 }
 declare module 'vue/types/vue' {
     interface Vue {
-        $SnackBar: typeof SnackBarShow;
+        $SnackBar: {
+            show: typeof show;
+            close: typeof close;
+        };
     }
 }
-export declare const SnackBarShow: (options: IOptions) => void;
+declare function show(options: IOptions): void;
+declare function close(): void;
 declare const _default: {
     install: () => void;
+    show: typeof show;
+    close: typeof close;
 };
 export default _default;
