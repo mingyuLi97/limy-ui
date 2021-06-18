@@ -7,7 +7,6 @@
   ],
   "author": "limy <mingyu6@staff.sina.com.cn>",
   "homepage": "",
-  "license": "MIT",
   "module": "index.ts",
   "types": "index.d.ts",
   "files": [
