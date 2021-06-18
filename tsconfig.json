@@ -26,7 +26,9 @@
   },
   "include": [
     "types/*.ts",
-    "packages/**/*",
+    "packages/lazy-img/index.d.ts",
+    "packages/**/*.ts",
+    "packages/**/*.vue",
     "src/**/*.ts",
     "src/**/*.tsx",
     "src/**/*.vue",
