@@ -18,7 +18,8 @@
   "module": "src/index.ts",
   "types": "types/index.d.ts",
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "http://cnpm.sina.com.cn/package/@mfelibs/"
   },
   "dependencies": {
     "@mfelibs/aio-plugins": "^1.0.5",
