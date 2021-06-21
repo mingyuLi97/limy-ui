@@ -86,6 +86,7 @@ export default class SnackBar extends Vue {
   }
 
   close() {
+    if(!this.visible) return
     this.visible = false;
     if (typeof this.onClose === 'function') {
       this.onClose();

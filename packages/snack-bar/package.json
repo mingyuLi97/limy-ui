@@ -6,12 +6,14 @@
     "snack-bar"
   ],
   "author": "limy <mingyu6@staff.sina.com.cn>",
-  "homepage": "",
   "module": "index.ts",
   "types": "index.d.ts",
+  "maintainers": [
+    "mingyu6"
+  ],
   "publishConfig": {
     "access": "public",
-    "registry": "http://cnpm.sina.com.cn/package/@mfelibs/"
+    "registry": "http://registry.cnpm.sina.com.cn/"
   },
   "repository": {
     "type": "git",
