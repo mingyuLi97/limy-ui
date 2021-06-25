@@ -6,20 +6,10 @@
   "workspaces":[
     "packages/*"
   ],
-  "files": [
-    "src/",
-    "types/"
-  ],
   "scripts": {
     "dev": "marax dev",
     "beta": "npm version --no-git-tag-version prerelease && npm publish --tag=beta",
     "release": "npm version --no-git-tag-version patch && npm publish"
-  },
-  "module": "src/index.ts",
-  "types": "types/index.d.ts",
-  "publishConfig": {
-    "access": "public",
-    "registry": "http://cnpm.sina.com.cn/package/@mfelibs/"
   },
   "dependencies": {
     "@mfelibs/aio-plugins": "^1.0.5",
