@@ -9,15 +9,12 @@
   "homepage": "",
   "license": "ISC",
   "main": "index.js",
-  "directories": {
-    "lib": "lib",
-    "test": "__tests__"
-  },
-  "files": [
-    "lib"
+  "maintainers": [
+    "mingyu6"
   ],
   "publishConfig": {
-    "registry": "http://registry.cnpm.sina.com.cn/"
+    "registry": "http://registry.cnpm.sina.com.cn/",
+    "access": "public"
   },
   "repository": {
     "type": "git",
@@ -28,5 +25,6 @@
   },
   "dependencies": {
     "@mfelibs/aio-plugins": "1.0.7-3"
-  }
+  },
+  "gitHead": "376bd9c7c8aae793ced66b58a62ac458b3c75fd5"
 }
