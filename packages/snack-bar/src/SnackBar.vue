@@ -9,7 +9,10 @@
     :style="`transition: all ${transitionDuration}ms;${visibleStyle}`"
   >
     <div class="aio-snack-bar__wrapper">
-      <div class="aio-snack-bar__icon">
+      <div
+        class="aio-snack-bar__icon"
+        :style="`border-radius: ${iconBorderRadius}`"
+      >
         <img class="img_width" :src="icon" />
       </div>
 
@@ -24,7 +27,7 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component, Prop, Watch } from 'vue-property-decorator';
+import { Vue, Component } from 'vue-property-decorator';
 import './index.css';
 
 @Component({
@@ -35,9 +38,11 @@ export default class SnackBar extends Vue {
   onClickButton: () => void = null; // 点击按钮回调
   onUserClickClose: () => void = null; // 当用户点击关闭按钮
   icon: string = null;
+  iconBorderRadius: string = '';
   content: string = null;
   btnText: string = null;
   duration: number = 3000; // 显示多长时间（ms） 默认为 3000，传 0 则不消失
+  distance: number = this.remToPx(1.64);
   transitionDuration: number = 500; // 动画执行时间（ms）默认 500
   commentBarHeight: number = 0; // 因为 ios 和 android webview 不一样 需要通过该参数纠正
   timer: any = null;
@@ -45,8 +50,7 @@ export default class SnackBar extends Vue {
 
   get visibleStyle(): string {
     return this.visible
-      ? `transform: translate(0, -${this.remToPx(1.64) +
-          this.commentBarHeight}px);`
+      ? `transform: translate(0, -${this.distance + this.commentBarHeight}px);`
       : `opacity: 0;`;
   }
 
@@ -65,7 +69,7 @@ export default class SnackBar extends Vue {
   startTimer() {
     if (this.duration > 0) {
       this.timer = setTimeout(() => {
-        if (!this.visible) {
+        if (this.visible) {
           this.close();
         }
       }, this.duration);
@@ -82,11 +86,11 @@ export default class SnackBar extends Vue {
       console.log(`[SnackBar] 执行用户关闭方法`);
       this.onUserClickClose();
     }
-    this.close()
+    this.close();
   }
 
   close() {
-    if(!this.visible) return
+    if (!this.visible) return;
     this.visible = false;
     if (typeof this.onClose === 'function') {
       this.onClose();
@@ -94,8 +98,15 @@ export default class SnackBar extends Vue {
     // 动画执行结束后移除当前的 dom
     setTimeout(() => {
       this.$destroy();
-      this.$el.parentNode.removeChild(this.$el);
+      this.$el.parentNode?.removeChild(this.$el);
     }, this.transitionDuration);
+  }
+  /**
+   * 直接关闭，无动画
+   */
+  forceClose() {
+    this.$destroy();
+    this.$el.parentNode?.removeChild(this.$el);
   }
 }
 </script>

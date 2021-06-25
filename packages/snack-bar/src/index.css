@@ -24,6 +24,7 @@
   width: 0.6rem;
   height: 0.6rem;
   margin-left: 0.3rem;
+  overflow: hidden;
 }
 .aio-snack-bar__icon img {
   width: 100%;
