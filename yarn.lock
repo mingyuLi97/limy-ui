@@ -2068,6 +2068,13 @@
     yazl "^2.5.1"
     zip-webpack-plugin "^4.0.1"
 
+"@mfelibs/aio-plugins@1.0.7-3":
+  version "1.0.7-3"
+  resolved "http://registry.cnpm.sina.com.cn/@mfelibs/aio-plugins/download/@mfelibs/aio-plugins-1.0.7-3.tgz#77612d33266c30f49b013b8bf6cdec483ac3fa81"
+  integrity sha1-d2EtMyZsMPSbATuL9s3sSDrD+oE=
+  dependencies:
+    vue "^2.6.12"
+
 "@mfelibs/aio-plugins@^1.0.5":
   version "1.0.6"
   resolved "http://registry.cnpm.sina.com.cn/@mfelibs/aio-plugins/download/@mfelibs/aio-plugins-1.0.6.tgz#4e4d0c2cad47fdffa3e4635c8466dbf3bfd780b7"

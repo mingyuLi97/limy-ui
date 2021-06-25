@@ -1,0 +1,32 @@
+{
+  "name": "@mfelibs/aio-img",
+  "version": "1.0.0",
+  "description": "懒加载和裁图整合",
+  "keywords": [
+    "img"
+  ],
+  "author": "limy <mingyu6@staff.sina.com.cn>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "registry": "http://registry.cnpm.sina.com.cn/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@gitlab.weibo.cn:2222/SINA_MFE_COMPONENTS/sina-aio-components.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "dependencies": {
+    "@mfelibs/aio-plugins": "1.0.7-3"
+  }
+}
