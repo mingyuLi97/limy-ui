@@ -25,7 +25,9 @@
     "@mara/x": "^3.0.0",
     "lerna": "^4.0.0",
     "vue-template-compiler": "^2.6.11",
-    "typescript": "^3.9.3"
+    "typescript": "^3.9.3",
+    "uppercamelcase": "^3.0.0",
+    "inquirer": "^8.1.1"
   },
   "engines": {
     "node": ">= 8.0.0",
