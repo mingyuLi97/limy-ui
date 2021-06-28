@@ -5,7 +5,6 @@
 -->
 <template>
   <img
-    :alt="alt"
     src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACAQMAAACnuvRZAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAApJREFUCNdjAAIAAAQAASDSLW8AAAAASUVORK5CYII="
     ref="img"
   />
@@ -18,19 +17,12 @@ import { getCutPicUrl, ICutPicOpts } from '@mfelibs/aio-plugins';
 @Component({
   components: {}
 })
-export default class AioLazyImg extends Vue {
+export default class AioImg extends Vue {
   @Prop({
     required: true,
     type: String
   })
   src!: string;
-
-  @Prop({
-    required: false,
-    type: String,
-    default: ''
-  })
-  alt!: string;
 
   /**
    * IntersectionObserverInit 配置
@@ -46,17 +38,16 @@ export default class AioLazyImg extends Vue {
       };
     }
   })
-  ioConfig?: IntersectionObserverInit;
+  ioConfig!: IntersectionObserverInit;
 
   /**
-   * 裁图服务配置，false时为不裁图
+   * 裁图服务配置
    */
   @Prop({
     required: false,
-    type: Object,
-    default: false
+    type: Object
   })
-  cutConfig!: ICutPicOpts | boolean;
+  cutConfig?: ICutPicOpts;
 
   /**
    * 加载成功添加的类名
@@ -64,7 +55,7 @@ export default class AioLazyImg extends Vue {
   @Prop({
     required: false,
     type: String,
-    default: 'v-lazyload-success'
+    default: 'aio-img-lazy-success'
   })
   successClass!: string;
 
@@ -74,20 +65,21 @@ export default class AioLazyImg extends Vue {
   @Prop({
     required: false,
     type: String,
-    default: 'v-lazyload-error'
+    default: 'aio-img-lazy-error'
   })
   errorClass!: string;
-
-  realSrc: string = '';
 
   _observer: IntersectionObserver = null; // 全局只存在一个监听对象
 
   mounted() {
-    this.realSrc = this.cutConfig
-      ? getCutPicUrl(this.src, this.cutConfig as ICutPicOpts)
-      : this.src;
     this.createIntersectionObserver();
     this._observer && this._observer.observe(this.$refs.img as HTMLElement);
+  }
+
+  get realSrc(): string {
+    return this.cutConfig
+      ? getCutPicUrl(this.src, this.cutConfig as ICutPicOpts)
+      : this.src;
   }
 
   createIntersectionObserver() {
@@ -101,21 +93,25 @@ export default class AioLazyImg extends Vue {
           const { target, intersectionRatio } = entry;
           if (intersectionRatio > 0) {
             const imgEl: HTMLImageElement = target as HTMLImageElement;
-
-            const oImg = new Image();
-            const src = this.realSrc;
-            oImg.src = src;
-
-            oImg.onload = () => {
-              imgEl.src = src;
-              imgEl.classList.remove(this.errorClass);
-              imgEl.classList.add(this.successClass);
-              this._observer.unobserve(target);
-              this._observer.disconnect();
-            };
-            oImg.onerror = () => {
-              imgEl.classList.add(this.errorClass);
-            };
+            const { visibility, height, width } = window.getComputedStyle(
+              target,
+              null
+            );
+            if (
+              visibility !== 'hidden' &&
+              parseInt(height) * parseInt(width) !== 0
+            ) {
+              imgEl.src = this.realSrc;
+              imgEl.onload = () => {
+                imgEl.classList.remove(this.errorClass);
+                imgEl.classList.add(this.successClass);
+                this._observer.unobserve(target);
+                this._observer.disconnect();
+              };
+              imgEl.onerror = () => {
+                imgEl.classList.add(this.errorClass);
+              };
+            }
           }
         });
       },
