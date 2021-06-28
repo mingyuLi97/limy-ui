@@ -2,9 +2,9 @@ export interface IOptions {
     content: string;
     btnText: string;
     icon: string;
-    iconBorderRadius: string;
+    iconBorderRadius?: string;
     duration?: number;
-    distance: number;
+    distance?: number;
     transitionDuration?: number;
     commentBarHeight: number;
     onClickButton?: () => void;
