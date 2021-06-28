@@ -2,6 +2,8 @@
   <!-- <section class="labour_card"> -->
   <!-- <section class="aio_listen"> -->
   <div class="aio_listen_feed">
+    <div style="width: 100%; height:100vh; background-color: red;"></div>
+  <AioImgTest />
     <AioAudioBookItem
       title="测试的"
       intro="234 "
@@ -19,10 +21,12 @@
 import { Vue, Component, Prop } from 'vue-property-decorator';
 import { AioAudioBookItem } from '~/index';
 import SnackBarTest from './components/SnackBar.vue'
+import AioImgTest from './test-pages/AioImgTest.vue'
 @Component({
   components: {
     AioAudioBookItem,
-    SnackBarTest
+    SnackBarTest,
+    AioImgTest
   }
 })
 export default class App extends Vue {

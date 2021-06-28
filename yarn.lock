@@ -2075,11 +2075,12 @@
   dependencies:
     vue "^2.6.12"
 
-"@mfelibs/aio-plugins@^1.0.5":
-  version "1.0.6"
-  resolved "http://registry.cnpm.sina.com.cn/@mfelibs/aio-plugins/download/@mfelibs/aio-plugins-1.0.6.tgz#4e4d0c2cad47fdffa3e4635c8466dbf3bfd780b7"
-  integrity sha1-Tk0MLK1H/f+j5GNchGbb87/XgLc=
+"@mfelibs/aio-plugins@^1.0.7":
+  version "1.0.7"
+  resolved "http://registry.cnpm.sina.com.cn/@mfelibs/aio-plugins/download/@mfelibs/aio-plugins-1.0.7.tgz#3a6341ea8e9e09e8063e283865df6390cb2c0c3a"
+  integrity sha1-OmNB6o6eCegGPig4Zd9jkMssDDo=
   dependencies:
+    "@mfelibs/base-tools-cutpic" "^1.0.13"
     vue "^2.6.12"
 
 "@mfelibs/base-css@^3.1.16":
@@ -2100,6 +2101,11 @@
   integrity sha1-hTUaBhtQi7yX1fo5sG800OK4sfw=
   dependencies:
     "@mfelibs/base-tools-url2callupId" "^1.0.3"
+
+"@mfelibs/base-tools-cutpic@^1.0.13":
+  version "1.0.13"
+  resolved "http://registry.cnpm.sina.com.cn/@mfelibs/base-tools-cutpic/download/@mfelibs/base-tools-cutpic-1.0.13.tgz#6c219f227094c743d0dc7811471426accd63f3ec"
+  integrity sha1-bCGfInCUx0PQ3HgRRxQmrM1j8+w=
 
 "@mfelibs/base-tools-mkperformance@^1.0.2":
   version "1.0.2"

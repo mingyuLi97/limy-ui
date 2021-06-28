@@ -1,7 +1,7 @@
 <template>
   <div class="aio_listen_row" @click="handleClick" v-exposure="handleExposure">
     <figure class="aio_listen_row_img">
-      <aio-lazy-img :src="imgSrc" />
+      <aio-lazy-img :src="imgSrc" class="img_width" alt="aaa" title="ssss"/>
     </figure>
     <div class="aio_listen_row_flex">
       <h2 class="aio_listen_row_tit">{{ title }}</h2>
@@ -16,7 +16,7 @@
 <script lang="ts">
 import { Vue, Component, Prop } from 'vue-property-decorator';
 import { AioPluginExposure } from '@mfelibs/aio-plugins';
-import AioLazyImg from '../../lazy-img';
+import AioLazyImg from '@mfelibs/aio-img';
 import '../style/index.css';
 
 const vExp = new AioPluginExposure();
