@@ -23,6 +23,16 @@ export default class AioImg extends Vue {
     type: String
   })
   src!: string;
+  
+  /**
+   * 懒加载，默认开启
+   */
+  @Prop({
+    required: false,
+    type: Boolean,
+    default: true
+  })
+  lazy!: boolean;
 
   /**
    * IntersectionObserverInit 配置
@@ -73,7 +83,11 @@ export default class AioImg extends Vue {
 
   mounted() {
     this.createIntersectionObserver();
-    this._observer && this._observer.observe(this.$refs.img as HTMLElement);
+    if (this.lazy) {
+      this._observer && this._observer.observe(this.$refs.img as HTMLElement);
+    } else {
+      (this.$refs.img as HTMLImageElement).src = this.realSrc;
+    }
   }
 
   get realSrc(): string {

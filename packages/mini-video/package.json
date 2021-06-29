@@ -1,0 +1,29 @@
+{
+  "name": "@mfelibs/mini-video",
+  "version": "1.0.0",
+  "description": "小视频卡",
+  "keywords": [
+    "mini-video"
+  ],
+  "author": "limy <mingyu6@staff.sina.com.cn>",
+  "module": "index.ts",
+  "types": "index.d.ts",
+  "maintainers": [
+    "mingyu6"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "http://registry.cnpm.sina.com.cn/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@gitlab.weibo.cn:2222/SINA_MFE_COMPONENTS/sina-aio-components.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 11",
+    "build:tsc": "npx tsc index.ts -d --emitDeclarationOnly"
+  },
+  "dependencies": {
+    "@mfelibs/aio-img": "^1.0.1"
+  }
+}
