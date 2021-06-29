@@ -9,7 +9,11 @@
     @click="handleClick"
     v-exposure="handleExposure"
   >
-    <aio-img :src="itemInfo.cover" :cutConfig="coverCutConfig" />
+    <aio-img
+      class="img_width"
+      :src="itemInfo.cover"
+      :cutConfig="coverCutConfig"
+    />
     <div class="video_con_info">
       <span class="video_con_info_txt">{{ itemInfo.content }}</span>
       <div class="video_con_info_row">
@@ -28,16 +32,23 @@
 import { Vue, Component, Prop } from 'vue-property-decorator';
 import { IMiniVideoOptions } from '../index';
 import AioImg from '@mfelibs/aio-img';
-import { formatNumber, ICutPicOpts,  VueExposure } from '@mfelibs/aio-plugins';
-Vue.use(VueExposure, {
-  name: 'exposure',
-  
-  ioConfig: <IntersectionObserverInit>{}
-})
+import {
+  formatNumber,
+  ICutPicOpts,
+  AioPluginExposure
+} from '@mfelibs/aio-plugins';
+
+const _instance = new AioPluginExposure();
 
 @Component({
   components: {
     AioImg
+  },
+  directives: {
+    exposure: {
+      inserted: _instance.observe.bind(_instance),
+      unbind: _instance.unObserve.bind(_instance)
+    }
   },
   filters: {
     numFilter(res: number) {

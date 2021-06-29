@@ -1,4 +1,8 @@
-import MiniVideo from './src/main.vue';
+import MiniVideo from './src/MiniVideo.vue';
+// @ts-ignore
+MiniVideo.install = function(Vue) {
+  Vue.component(MiniVideo.name, MiniVideo);
+};
 
 export interface IMiniVideoOptions {
   avatar: string;
@@ -7,10 +11,5 @@ export interface IMiniVideoOptions {
   playCount: number;
   cover: string;
 }
-
-// @ts-ignore
-MiniVideo.install = function(Vue) {
-  Vue.component(MiniVideo.name, MiniVideo);
-};
 
 export default MiniVideo;
