@@ -69,7 +69,7 @@ inquirer.prompt(promptList).then(answers => {
     },
     {
       filePath: 'README.md',
-      content: `# ${dirName}`
+      content: `# ${dirName}\n > ${description}`
     },
     {
       filePath: `src/${componentName}.vue`,
@@ -167,6 +167,7 @@ function getMainVueContent(componentName, description, maintainer) {
  
 <script lang="ts">
 import { Vue, Component, Prop } from 'vue-property-decorator';
+import { I${componentName}Options } from '../index'
 
 @Component({
   components: {}
