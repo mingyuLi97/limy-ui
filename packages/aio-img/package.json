@@ -1,6 +1,6 @@
 {
   "name": "@mfelibs/aio-img",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "懒加载和裁图整合",
   "keywords": [
     "img"

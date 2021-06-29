@@ -1,12 +1,12 @@
 {
   "name": "@mfelibs/mini-video",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "小视频 item 组件",
   "scripts": {
     "build:tsc": "npx tsc index.ts -d --emitDeclarationOnly"
   },
   "dependencies": {
-    "@mfelibs/aio-img": "^1.0.1",
+    "@mfelibs/aio-img": "^1.0.2",
     "@mfelibs/aio-plugins": "^1.0.8"
   },
   "license": "ISC",
