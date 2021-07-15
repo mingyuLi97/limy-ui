@@ -9,7 +9,7 @@
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator';
-import SnackBar, { IOptions } from '@mfelibs/aio-snack-bar';
+import SnackBar, { IOptions } from '@packages/snack-bar'
 
 @Component({
   components: {}
@@ -22,7 +22,7 @@ export default class SnackBarTest extends Vue {
       icon:
         'https://img2.baidu.com/it/u=1954131356,3549453457&fm=26&fmt=auto&gp=0.jpg',
       distance: 200,
-      duration: 2000,
+      duration: 0,
       transitionDuration: 500,
       iconBorderRadius: '10px',
       onClickButton: () => {

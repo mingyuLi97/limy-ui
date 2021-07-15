@@ -19,6 +19,7 @@
     "resolveJsonModule": true,
     "baseUrl": ".",
     "paths": {
+      "@packages/*": ["packages/*"],
       "~/*": ["src/*"],
       "@types":["types"]
     },

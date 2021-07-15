@@ -1,33 +1,32 @@
 {
   "name": "@mfelibs/sina-aio-components",
-  "version": "0.1.8",
+  "version": "1.0.0",
   "description": "新浪公共组件库",
   "private": true,
-  "workspaces":[
+  "workspaces": [
     "packages/*"
   ],
   "scripts": {
-    "dev": "marax dev",
-    "beta": "npm version --no-git-tag-version prerelease && npm publish --tag=beta",
-    "release": "npm version --no-git-tag-version patch && npm publish"
+    "dev": "vite --host"
   },
   "dependencies": {
     "@mfelibs/aio-plugins": "^1.0.7",
     "@mfelibs/base-css": "^3.1.16",
+    "@mfelibs/universal-framework": "^0.3.256",
     "vue": "^2.6.14",
     "vue-class-component": "^7.2.3",
-    "@mfelibs/universal-framework": "^0.3.256",
-    "@mfelibs/aio-snack-bar": "^1.0.6",
-    "@mfelibs/aio-img": "^1.0.1-alpha.1",
     "vue-property-decorator": "^8.4.2"
   },
   "devDependencies": {
-    "@mara/x": "^3.0.0",
+    "@vue/compiler-sfc": "^3.1.4",
+    "inquirer": "^8.1.1",
     "lerna": "^4.0.0",
-    "vue-template-compiler": "^2.6.11",
     "typescript": "^3.9.3",
     "uppercamelcase": "^3.0.0",
-    "inquirer": "^8.1.1"
+    "vite": "2.3.7",
+    "vite-plugin-html": "2.0.7",
+    "vite-plugin-vue2": "1.6.2",
+    "vue-template-compiler": "^2.6.11"
   },
   "engines": {
     "node": ">= 8.0.0",
