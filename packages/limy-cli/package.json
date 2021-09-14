@@ -1,0 +1,24 @@
+{
+  "name": "@limy/limy-cli",
+  "version": "1.0.0",
+  "description": "limy-ui 脚手架",
+  "bin": {
+    "limy-cli": "bin/limy.js"
+  },
+  "author": "limy <mingyuli1997@gmail.com>",
+  "homepage": "https://github.com/mingyuLi97/limy-ui#readme",
+  "license": "ISC",
+  "publishConfig": {
+    "registry": "http://registry.cnpm.sina.com.cn/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mingyuLi97/limy-ui.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/mingyuLi97/limy-ui/issues"
+  }
+}
