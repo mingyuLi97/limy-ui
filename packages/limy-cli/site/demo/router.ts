@@ -11,11 +11,11 @@ function getRoutes() {
   const demos = require.context(
     "@ui/src",
     true,
-    /components\/[^\/]*\/demo\/index\.vue$/i
+    /components\/[^/]*\/demo\/index\.vue$/i
   );
   demos.keys().forEach((demoPath) => {
     routes.push({
-      path: '/' + demoPath.match(/\/([^\/]*)\/demo/)?.[1] as string,
+      path: '/' + demoPath.match(/\/([^/]*)\/demo/)?.[1] as string,
       component: demos(demoPath).default,
     });
   });

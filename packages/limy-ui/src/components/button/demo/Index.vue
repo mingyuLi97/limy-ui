@@ -11,7 +11,9 @@ import { Vue, Component } from "vue-property-decorator";
 @Component({
   components: {},
 })
-export default class index extends Vue {}
+export default class index extends Vue {
+  
+}
 </script>
 
 <style scoped>

@@ -1,9 +1,7 @@
 #! /usr/bin/env node
 
-const inquirer = require("inquirer");
 const program = require("commander");
 const chalk = require("chalk");
-const ora = require("ora");
 
 process.on('unhandledRejection', error => {
   // Will print "unhandledRejection err is not defined"
@@ -34,7 +32,7 @@ program
 program
   .command("dev")
   .description("run dev")
-  .action((a, b) => {
+  .action(() => {
     require('../lib/serve')()
   });
 
