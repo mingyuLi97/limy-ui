@@ -9,11 +9,10 @@
   "author": "limy <mingyuli1997@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "commit": "git add . && cz"
+    "commit": "git add . && cz",
+    "dev": "npx limy-cli dev"
   },
-  "dependencies": {
-    "vue": "^2.6.12"
-  },
+  "dependencies": {},
   "devDependencies": {
     "commitizen": "^4.2.3",
     "cz-conventional-changelog": "^3.3.0",

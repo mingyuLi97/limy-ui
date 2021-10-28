@@ -5,6 +5,11 @@ const program = require("commander");
 const chalk = require("chalk");
 const ora = require("ora");
 
+process.on('unhandledRejection', error => {
+  // Will print "unhandledRejection err is not defined"
+  console.log('unhandledRejection', error.message);
+});
+
 program
   .version(require("../package.json").version)
   .usage("<command> [option]")
@@ -24,6 +29,13 @@ program
   .option("-f, --force", "overwrite target directory if it exist")
   .action((name, options) => {
     require("../lib/create")(name, options);
+  });
+
+program
+  .command("dev")
+  .description("run dev")
+  .action((a, b) => {
+    require('../lib/serve')()
   });
 
 program.parse(process.argv);
