@@ -6,25 +6,49 @@
 const Webpack = require("webpack");
 const WebpackDevServer = require("webpack-dev-server");
 const webpackConfig = require("../webpack/dev")();
+const { getFreePort, getLocalIp } = require("../utils/get-free-port");
+const clearConsole = require("../utils/clear-console");
+const chalk = require("chalk");
 
 // const chalk = require('chalk')
-const ora = require('ora')
+const ora = require("ora");
 
-const spinner = ora('Starting development server...')
+const spinner = ora("Starting development server...");
 
+function printInstructions(urls) {
+  console.log(`  App running at:`);
+  console.log();
 
-function serve() {
-  spinner.start()
+  console.log(`  - ${chalk.bold("Local:")}    ${chalk.cyan(urls.local)}`);
+  console.log(`  - ${chalk.bold("Network:")}  ${chalk.cyan(urls.network)}`);
+
+  console.log();
+}
+
+async function serve() {
+  const port = await getFreePort(8888);
+  spinner.start();
   const compiler = Webpack(webpackConfig);
 
   const devServer = new WebpackDevServer(
     {
+      port,
       hot: true,
-      open: true,
+      open: false,
+      host: "0.0.0.0",
       ...(webpackConfig.devServer || {}),
     },
     compiler
   );
+  const urls = {
+    local: `http://localhost:${port}`,
+    network: `http://${getLocalIp()}:${port}`,
+  };
+
+  compiler.hooks.done.tap("done", (stats) => {
+    clearConsole();
+    printInstructions(urls);
+  });
 
   // Ctrl + C 触发
   ["SIGINT", "SIGTERM"].forEach((sig) => {
@@ -35,8 +59,7 @@ function serve() {
   });
 
   return devServer.startCallback(() => {
-    spinner.stop()
-    console.log("Starting server on http://localhost:8080");
+    spinner.stop();
   });
 }
 
