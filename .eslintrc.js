@@ -1,4 +1,7 @@
 module.exports = {
   root: true,
-  extends: ["@vant"]
+  extends: ["@vant"],
+  rules:{
+    'global-require': "off"
+  }
 };
