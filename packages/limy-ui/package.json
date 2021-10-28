@@ -35,6 +35,8 @@
     "vue-property-decorator": "^9.1.2"
   },
   "devDependencies": {
+    "@vant/eslint-config": "^3.3.2",
+    "eslint": "^7.32.0",
     "postcss-loader": "^6.2.0"
   }
 }
