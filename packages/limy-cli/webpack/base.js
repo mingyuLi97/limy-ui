@@ -3,9 +3,10 @@
  * @Author: 李明宇
  * @Date: 2021-10-20 21:46:08
  */
-const HtmlWebpackPlugin = require("html-webpack-plugin");
 const VueLoaderPlugin = require("vue-loader/lib/plugin");
+const FriendlyErrorsWebpackPlugin = require("friendly-errors-webpack-plugin");
 const path = require("path");
+
 const context = process.cwd();
 module.exports = {
   resolve: {
@@ -72,5 +73,10 @@ module.exports = {
       },
     ],
   },
-  plugins: [new VueLoaderPlugin()],
+  plugins: [
+    new VueLoaderPlugin(),
+    new FriendlyErrorsWebpackPlugin({
+      clearConsole: true,
+    }),
+  ],
 };

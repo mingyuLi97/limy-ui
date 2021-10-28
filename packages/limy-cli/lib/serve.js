@@ -5,9 +5,16 @@
  */
 const Webpack = require("webpack");
 const WebpackDevServer = require("webpack-dev-server");
+const webpackConfig = require("../webpack/dev")();
+
+// const chalk = require('chalk')
+const ora = require('ora')
+
+const spinner = ora('Starting development server...')
+
 
 function serve() {
-  const webpackConfig = require("../webpack/dev")();
+  spinner.start()
   const compiler = Webpack(webpackConfig);
 
   const devServer = new WebpackDevServer(
@@ -28,6 +35,7 @@ function serve() {
   });
 
   return devServer.startCallback(() => {
+    spinner.stop()
     console.log("Starting server on http://localhost:8080");
   });
 }
