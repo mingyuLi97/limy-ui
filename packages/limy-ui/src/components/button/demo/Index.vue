@@ -24,9 +24,9 @@ export default class index extends Vue {
     console.log(`[index] `);
     const b = this.bem;
     console.log(
-      b() + '\n',
-      b("text")+ '\n',
-      b({ disabled: true })+ '\n',
+      b() + "\n",
+      b("text") + "\n",
+      b({ disabled: true }) + "\n",
       b("text", { disabled: true, abc: false, def: true })
     );
   }
