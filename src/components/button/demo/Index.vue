@@ -1,7 +1,7 @@
 <template>
   <div class="red">
     l-button
-    <!-- <l-button></l-button> -->
+    <limy-button></limy-button>
   </div>
 </template>
 
@@ -21,7 +21,7 @@ export default class index extends Vue {
   }
 
   created() {
-    console.log(`[index] `);
+    console.log(this.$options.name); 
     const b = this.bem;
     console.log(
       b() + "\n",

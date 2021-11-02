@@ -16,7 +16,7 @@ module.exports = () => {
     mode: "development",
     devtool: "cheap-module-source-map",
     entry: {
-      main: path.resolve(context, "examples/index.js"),
+      main: path.resolve(context, "examples/index.ts"),
     },
     output: {
       chunkFilename: "[name].js",
