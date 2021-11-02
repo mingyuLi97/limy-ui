@@ -12,11 +12,10 @@
     "declaration": true,
     "baseUrl": ".",
     "paths": {
-      "@ui/*": ["packages/limy-ui/*"],
-      "@cli/*": ["packages/limy-cli/*"],
+      "~/*": ["src/*"],
       "@types/*": ["types/*"]
     }
   },
-  "include": ["packages/**/*", "types/**/*"],
+  "include": ["types/**/*", "src/**/*", "examples/**/*"],
   "exclude": ["node_modules"]
 }

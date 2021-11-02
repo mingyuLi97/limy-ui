@@ -9,12 +9,14 @@ const { merge } = require("webpack-merge");
 const baseConfig = require("./base");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
+const context = process.cwd()
+
 module.exports = () => {
   const devConfig = {
     mode: "development",
     devtool: "cheap-module-source-map",
     entry: {
-      main: path.resolve(__dirname, "../site/demo/index.js"),
+      main: path.resolve(context, "examples/index.js"),
     },
     output: {
       chunkFilename: "[name].js",
@@ -23,7 +25,7 @@ module.exports = () => {
     stats: "errors-warnings", // 只显示警告和错误信息
     plugins: [
       new HtmlWebpackPlugin({
-        template: path.resolve(__dirname, "../site/demo/index.html"),
+        template: path.resolve(context, "examples/index.html"),
       }),
       // 进度条插件
       new WebpackBar({

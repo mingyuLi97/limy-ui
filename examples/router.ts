@@ -9,7 +9,7 @@ function getRoutes() {
     component: Home,
   });
   const demos = require.context(
-    "@ui/src",
+    "~",
     true,
     /components\/[^/]*\/demo\/index\.vue$/i
   );

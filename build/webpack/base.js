@@ -12,7 +12,7 @@ module.exports = {
   resolve: {
     extensions: [".js", ".vue", ".ts"],
     alias: {
-      "@ui": path.resolve(context, "packages/limy-ui"),
+      "~": path.resolve(context, "src"),
     },
   },
   module: {

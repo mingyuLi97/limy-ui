@@ -8,7 +8,7 @@
 <script lang="ts">
 import { Vue, Component } from "vue-property-decorator";
 import Button from "../Button.vue";
-import { createBEM } from "@ui/src/utils/create/bem";
+import { createBEM } from "~/utils/create/bem";
 
 @Component({
   components: {

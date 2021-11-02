@@ -10,14 +10,38 @@
   "license": "MIT",
   "scripts": {
     "commit": "git add . && cz",
-    "dev": "npx limy-cli dev"
+    "dev": ""
   },
-  "dependencies": {},
+  "dependencies": {
+    "vue": "^2.6.14",
+    "vue-property-decorator": "^9.1.2",
+    "vue-class-component": "^7.2.6",
+    "vue-router": "^3.5.3"
+  },
   "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@types/webpack-env": "^1.16.3",
+    "babel-loader": "^8.2.2",
     "commitizen": "^4.2.3",
+    "css-loader": "^6.4.0",
     "cz-conventional-changelog": "^3.3.0",
-    "cz-lerna-changelog": "^2.0.3",
-    "lerna": "^4.0.0"
+    "dev-ip": "^1.0.1",
+    "friendly-errors-webpack-plugin": "^1.7.0",
+    "html-webpack-plugin": "^5.5.0",
+    "portscanner": "^2.2.0",
+    "postcss": "^8.3.9",
+    "postcss-loader": "^6.2.0",
+    "postcss-preset-env": "^6.7.0",
+    "style-loader": "^3.3.0",
+    "ts-loader": "^9.2.6",
+    "typescript": "^4.4.4",
+    "url-loader": "^4.1.1",
+    "vue-loader": "^15.9.8",
+    "vue-template-compiler": "^2.6.14",
+    "webpack": "^5.59.0",
+    "webpack-dev-server": "^4.3.1",
+    "webpack-merge": "^5.8.0",
+    "webpackbar": "^5.0.0-3"
   },
   "config": {
     "commitizen": {

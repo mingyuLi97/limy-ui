@@ -45,7 +45,7 @@ async function serve() {
     network: `http://${getLocalIp()}:${port}`,
   };
 
-  compiler.hooks.done.tap("done", (stats) => {
+  compiler.hooks.done.tap("done", () => {
     clearConsole();
     printInstructions(urls);
   });
@@ -63,4 +63,4 @@ async function serve() {
   });
 }
 
-module.exports = serve;
+serve()
