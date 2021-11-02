@@ -36,6 +36,9 @@ async function serve() {
       hot: true,
       open: false,
       host: "0.0.0.0",
+      client: {
+        logging: 'error'
+      },
       ...(webpackConfig.devServer || {}),
     },
     compiler
