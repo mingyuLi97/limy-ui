@@ -9,6 +9,8 @@
 import { Vue, Component } from "vue-property-decorator";
 import Button from "../Button.vue";
 import { createBEM } from "~/utils/create/bem";
+import '../index.scss'
+
 
 @Component({
   components: {

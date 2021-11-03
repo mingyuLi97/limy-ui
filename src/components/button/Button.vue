@@ -9,6 +9,7 @@
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator';
+import { createBEM } from '~/utils/create/bem';
 
 
 @Component({
@@ -17,7 +18,13 @@ import { Vue, Component } from 'vue-property-decorator';
 })
 export default class Button extends Vue{
 
+  get b(){
+    return createBEM(this.$options.name)
+  }
 
+  created() {
+    console.log(this.b('text'));
+  }
 }
 </script>
 
