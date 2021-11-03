@@ -9,7 +9,6 @@
   "author": "limy <mingyuli1997@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "commit": "git add . && cz",
     "dev": "node ./build/bin/serve.js"
   },
   "dependencies": {
