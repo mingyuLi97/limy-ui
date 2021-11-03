@@ -1,5 +1,50 @@
-$body-color: green;
+@mixin type($bgc, $color, $borderWidth: 1px) {
+  border: $borderWidth solid $bgc;
+  background-color: $bgc;
+  color: $color;
+}
 
-body {
-  color: $body-color;
+.limy-button {
+  position: relative;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0 15px;
+  border-width: 1px;
+  height: 44px;
+  font-size: 14px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 2px;
+  &--default {
+    @include type(#ebedf0, black);
+  }
+
+  &--primary {
+    @include type(#07c160, white);
+  }
+
+  &--info {
+    @include type(#1989fa, white);
+  }
+
+  &--danger {
+    @include type(#ee0a24, white);
+  }
+
+  &--warning {
+    @include type(#ff976a, white);
+  }
+
+  &--disabled {
+    opacity: .5;
+    cursor: not-allowed;
+  }
+
+  &--shape-round {
+    border-radius: 999999px;
+  }
+
+  &--shape-square {
+    border-radius: 0;
+  }
 }
