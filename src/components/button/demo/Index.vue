@@ -25,14 +25,14 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component } from "vue-property-decorator";
-import Button from "../Button.vue";
-import "../index.scss";
+import { Vue, Component } from 'vue-property-decorator';
+import Button from '../Button.vue';
+import '../index.scss';
 
 @Component({
   components: {
-    Button,
-  },
+    Button
+  }
 })
 export default class index extends Vue {}
 </script>

@@ -6,16 +6,16 @@
 const components = [];
 
 const RequireContext = require.context(
-  "~",
+  '~',
   true,
   /components\/[^/]*\/index\.ts$/i
 );
-RequireContext.keys().forEach((path) => {
+RequireContext.keys().forEach(path => {
   components.push(RequireContext(path).default);
 });
 
 export default {
-  install: (Vue) => {
-    components.forEach((c) => Vue.use(c));
-  },
+  install: Vue => {
+    components.forEach(c => Vue.use(c));
+  }
 };

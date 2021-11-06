@@ -1,5 +1,5 @@
-import _Button from "./Button.vue";
-import { withInstall } from "~/utils/withInstall";
+import _Button from './Button.vue';
+import { withInstall } from '~/utils/withInstall';
 
 const Button = withInstall(_Button);
 

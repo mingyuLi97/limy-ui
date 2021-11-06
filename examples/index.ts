@@ -1,11 +1,11 @@
-import Vue from 'vue'
-import router from './router'
-import App from './App.vue'
-import LimyUI from "~/components"
+import Vue from 'vue';
+import router from './router';
+import App from './App.vue';
+import LimyUI from '~/components';
 
-Vue.use(LimyUI)
+Vue.use(LimyUI);
 
 new Vue({
   router,
-  render: h => h(App),
-}).$mount('#app')
+  render: h => h(App)
+}).$mount('#app');

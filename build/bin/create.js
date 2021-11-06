@@ -4,55 +4,55 @@
  * @Date: 2021-11-04 21:32:18
  */
 
-const fs = require("fs");
-const path = require("path");
-const uppercamelcase = require("uppercamelcase");
-const inquirer = require("inquirer");
-const { execSync } = require("child_process");
+const fs = require('fs');
+const path = require('path');
+const uppercamelcase = require('uppercamelcase');
+const inquirer = require('inquirer');
+const { execSync } = require('child_process');
 const context = process.cwd();
 
-const componentsPath = path.resolve(context, "src/components");
+const componentsPath = path.resolve(context, 'src/components');
 
-(async function() {
+(async function () {
   const components = fs.readdirSync(componentsPath);
   const promptList = [
     {
-      type: "input",
-      message: "请输入组件名称 用英文横线连接（mini-card）:",
-      name: "dirName",
-      default: "mini-card",
-      validate: (val) => {
+      type: 'input',
+      message: '请输入组件名称 用英文横线连接（mini-card）:',
+      name: 'dirName',
+      default: 'mini-card',
+      validate: val => {
         if (components.includes(val)) {
-          return "❌ 组件名已存在！";
+          return '❌ 组件名已存在！';
         }
         return true;
-      },
+      }
     },
     {
-      type: "input",
-      message: "请对组件进行简单描述:",
-      name: "description",
-      default: "",
-    },
+      type: 'input',
+      message: '请对组件进行简单描述:',
+      name: 'description',
+      default: ''
+    }
   ];
 
   const { dirName, description } = await inquirer.prompt(promptList);
   // 创建包文件夹
-  const PackagePath = path.resolve(context, "src/components", dirName);
+  const PackagePath = path.resolve(context, 'src/components', dirName);
 
   // 大写名称 MiniVideo
   const componentName = uppercamelcase(dirName);
 
-  let author = "";
+  let author = '';
   try {
-    const name = execSync("git config user.name")
+    const name = execSync('git config user.name')
       .toString()
       .trim()
-      .replace(/[\r\n]/g, "");
-    const email = execSync("git config user.email")
+      .replace(/[\r\n]/g, '');
+    const email = execSync('git config user.email')
       .toString()
       .trim()
-      .replace(/[\r\n]/g, "");
+      .replace(/[\r\n]/g, '');
     author = `${name} <${email}>`;
   } catch (error) {
     console.log(`❌ 未获取到用户名`, error);
@@ -60,34 +60,34 @@ const componentsPath = path.resolve(context, "src/components");
 
   const Files = [
     {
-      filePath: "index.ts",
-      content: getIndexTsContent(componentName),
+      filePath: 'index.ts',
+      content: getIndexTsContent(componentName)
     },
     {
-      filePath: "README.md",
-      content: `# ${dirName}\n`,
+      filePath: 'README.md',
+      content: `# ${dirName}\n`
     },
     {
       filePath: `${componentName}.vue`,
-      content: getMainVueContent(componentName, dirName, description, author),
+      content: getMainVueContent(componentName, dirName, description, author)
     },
     {
-      filePath: "index.scss",
-      content: "\n",
+      filePath: 'index.scss',
+      content: '\n'
     },
     {
-      filePath: "demo/index.vue",
-      content: getDemoContent(componentName),
-    },
+      filePath: 'demo/index.vue',
+      content: getDemoContent(componentName)
+    }
   ];
 
   fs.mkdirSync(PackagePath);
-  fs.mkdirSync(path.join(PackagePath, "demo"));
-  fs.mkdirSync(path.join(PackagePath, "test"));
-  Files.forEach((file) => {
+  fs.mkdirSync(path.join(PackagePath, 'demo'));
+  fs.mkdirSync(path.join(PackagePath, 'test'));
+  Files.forEach(file => {
     fs.writeFileSync(path.resolve(PackagePath, file.filePath), file.content);
   });
-  console.log("done.");
+  console.log('done.');
   console.log();
 })();
 

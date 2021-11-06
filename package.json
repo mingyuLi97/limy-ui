@@ -7,7 +7,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "node ./build/bin/serve.js",
-    "new": "node ./build/bin/create.js"
+    "new": "node ./build/bin/create.js",
+    "prepare": "husky install"
   },
   "dependencies": {
     "vue": "^2.6.14",
@@ -17,6 +18,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
+    "@limy-org/prettier-config": "^1.0.0",
     "@types/webpack-env": "^1.16.3",
     "babel-loader": "^8.2.2",
     "commitizen": "^4.2.3",
@@ -25,11 +27,14 @@
     "dev-ip": "^1.0.1",
     "friendly-errors-webpack-plugin": "^1.7.0",
     "html-webpack-plugin": "^5.5.0",
+    "husky": "7.0.4",
+    "lint-staged": "11.2.3",
     "ora": "5.4.1",
     "portscanner": "^2.2.0",
     "postcss": "^8.3.9",
     "postcss-loader": "^6.2.0",
     "postcss-preset-env": "^6.7.0",
+    "prettier": "^2.4.1",
     "sass": "^1.43.4",
     "sass-loader": "^12.3.0",
     "style-loader": "^3.3.0",
@@ -44,9 +49,15 @@
     "webpack-merge": "^5.8.0",
     "webpackbar": "^5.0.0-3"
   },
+  "prettier": "@limy-org/prettier-config",
   "config": {
     "commitizen": {
       "path": "node_modules/cz-conventional-changelog"
     }
+  },
+  "lint-staged": {
+    "*.{js,ts,json,vue,md}": [
+      "prettier --write"
+    ]
   }
 }
