@@ -10,9 +10,10 @@ const path = require('path');
 const context = process.cwd();
 module.exports = {
   resolve: {
-    extensions: ['.js', '.vue', '.ts'],
+    extensions: ['.js', '.vue', '.ts', '.d.ts'],
     alias: {
-      '~': path.resolve(context, 'src')
+      '~': path.resolve(context, 'src'),
+      '@types': path.resolve(context, 'types')
     }
   },
   module: {
