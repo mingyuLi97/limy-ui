@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Tab />
+    <Tab :titles="['a', 'b', 'c', 'd', 'e', 'f']" />
   </div>
 </template>
 

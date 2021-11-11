@@ -5,10 +5,13 @@
 <template>
   <div :class="classes">
     <Swiper ref="SwiperRef" :options="swiperOptions">
-      <SwiperSlide v-for="(item, index) in arr" :key="index">
-        <div>
-          {{ item }}
-        </div>
+      <SwiperSlide
+        v-for="(item, index) in titles"
+        :key="index"
+        :class="b('content', { active: activeIndex === index })"
+        @click.native="onClickSlide(index, item)"
+      >
+        <span>{{ item }}</span>
       </SwiperSlide>
     </Swiper>
   </div>
@@ -17,6 +20,7 @@
 <script lang="ts">
 import { Vue, Component, Prop, Ref } from 'vue-property-decorator';
 import { Swiper, SwiperSlide } from 'vue-awesome-swiper';
+import SwiperClass, { SwiperOptions } from 'swiper';
 import { createBEM } from '~/utils/create/bem';
 import 'swiper/css/swiper.css';
 @Component({
@@ -26,7 +30,8 @@ import 'swiper/css/swiper.css';
   }
 })
 export default class Tab extends Vue {
-  @Ref('SwiperRef') readonly SwiperRef!: any;
+  @Prop({ required: true, type: Array }) titles: string[];
+
   get classes() {
     const { b } = this;
     return [b([])];
@@ -36,19 +41,30 @@ export default class Tab extends Vue {
     return createBEM('limy-tab');
   }
 
-  get swiper() {
-    return this.SwiperRef;
+  activeIndex: number = 0;
+
+  swiper: SwiperClass | null = null;
+
+  swiperOptions: SwiperOptions = {
+    slidesPerView: 'auto',
+    on: {
+      slideChange() {
+        console.log(this.activeIndex);
+      }
+    }
+  };
+
+  mounted() {
+    this.swiper = (this.$refs.SwiperRef as any).$swiper;
+
+    // console.log(this.swiper.on(}));
+    console.log(this.$refs, (this.$refs.SwiperRef as any).$swiper);
   }
 
-  swiperOptions = {};
-
-  arr: string[] = [
-    'vant',
-    'vue',
-    'react',
-    'limy-ui',
-    'webpack-dev-server',
-    'marax'
-  ];
+  onClickSlide(index: number, name: string) {
+    this.activeIndex = index;
+    this.swiper.slideTo(index);
+    this.$router.replace(`/${name}`);
+  }
 }
 </script>
