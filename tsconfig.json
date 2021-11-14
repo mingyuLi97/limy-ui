@@ -16,6 +16,6 @@
       "@types/*": ["types/*"]
     }
   },
-  "include": ["types/**/*", "src/**/*", "examples/**/*"],
+  "include": ["types/**/*", "src/**/*", "examples/**/*", "website/**/*"],
   "exclude": ["node_modules"]
 }

@@ -1,5 +1,5 @@
 /*
- * @Description: 开发环境 webpack 配置
+ * @Description: 开发环境 webpack 配置 -- website
  * @Author: 李明宇
  * @Date: 2021-10-20 21:46:13
  */
@@ -12,11 +12,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const context = process.cwd();
 
 module.exports = () => {
-  const devConfig = {
+  const demoDevConfig = {
     mode: 'development',
     devtool: 'cheap-module-source-map',
     entry: {
-      main: path.resolve(context, 'examples/index.ts')
+      main: path.resolve(context, 'website/index.ts')
     },
     output: {
       chunkFilename: '[name].js',
@@ -25,7 +25,7 @@ module.exports = () => {
     stats: 'errors-warnings', // 只显示警告和错误信息
     plugins: [
       new HtmlWebpackPlugin({
-        template: path.resolve(context, 'examples/index.html')
+        template: path.resolve(context, 'website/public/index.html')
       }),
       // 进度条插件
       new WebpackBar({
@@ -33,5 +33,5 @@ module.exports = () => {
       })
     ]
   };
-  return merge(baseConfig, devConfig);
+  return merge(baseConfig, demoDevConfig);
 };

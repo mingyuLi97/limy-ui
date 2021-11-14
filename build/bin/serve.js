@@ -5,18 +5,24 @@
  */
 const Webpack = require('webpack');
 const WebpackDevServer = require('webpack-dev-server');
-const webpackConfig = require('../webpack/dev')();
 const { getFreePort, getLocalIp } = require('../utils/get-free-port');
 const clearConsole = require('../utils/clear-console');
 const chalk = require('chalk');
+const parseArgs = require('../utils/parse-args');
 
 // const chalk = require('chalk')
 const ora = require('ora');
 
+const target = parseArgs('target') || 'example';
+const webpackConfig =
+  target === 'example'
+    ? require('../webpack/example.dev')()
+    : require('../webpack/website.dev')();
+
 const spinner = ora('Starting development server...');
 
 function printInstructions(urls) {
-  console.log(`  App running at:`);
+  console.log(`  App ${target} running at:`);
   console.log();
 
   console.log(`  - ${chalk.bold('Local:')}    ${chalk.cyan(urls.local)}`);
