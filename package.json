@@ -6,7 +6,8 @@
   "author": "limy <mingyuli1997@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "node ./build/bin/serve.js",
+    "dev": "node ./build/bin/serve.js --target=example",
+    "dev:website": "node ./build/bin/serve.js --target=website",
     "new": "node ./build/bin/create.js",
     "prepare": "husky install"
   },
