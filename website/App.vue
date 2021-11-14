@@ -1,30 +1,25 @@
 <template>
-  <div>
-    <keep-alive>
-      <router-view />
-    </keep-alive>
+  <div class="limy-doc">
+    <DocHeader />
+    <NavBar />
+    <DocContainer />
+    <Simulator />
   </div>
 </template>
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator';
-
+import DocHeader from './components/DocHeader.vue';
+import NavBar from './components/NavBar.vue';
+import Simulator from './components/Simulator.vue';
+import DocContainer from './components/DocContainer.vue';
 @Component({
-  components: {}
+  components: {
+    DocHeader,
+    NavBar,
+    DocContainer,
+    Simulator
+  }
 })
-export default class App extends Vue {
-  get paths(): string[] {
-    return this.$router.options.routes.map(route => route.path);
-  }
-
-  get titles(): string[] {
-    return this.paths.map(path => (path === '/' ? 'home' : path.substr(1)));
-  }
-
-  onSlideChange(index: number, content: string) {
-    this.$router.replace(this.paths[index]);
-  }
-}
+export default class App extends Vue {}
 </script>
-
-<style scoped></style>

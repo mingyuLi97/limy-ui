@@ -3,7 +3,8 @@ import router from './router';
 import App from './App.vue';
 import LimyUI from '~/components';
 import './css/reset.css';
-
+import './css/index.scss';
+import './css/nav-bar.scss';
 Vue.use(LimyUI);
 
 new Vue({
