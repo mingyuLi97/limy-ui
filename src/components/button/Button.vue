@@ -54,10 +54,6 @@ export default class Button extends Vue {
   get b() {
     return createBEM('limy-button');
   }
-
-  created() {
-    console.log(this.b('text'));
-  }
 }
 </script>
 

@@ -46,25 +46,17 @@ export default class Tab extends Vue {
   swiper: SwiperClass | null = null;
 
   swiperOptions: SwiperOptions = {
-    slidesPerView: 'auto',
-    on: {
-      slideChange() {
-        console.log(this.activeIndex);
-      }
-    }
+    slidesPerView: 'auto'
   };
 
   mounted() {
     this.swiper = (this.$refs.SwiperRef as any).$swiper;
-
-    // console.log(this.swiper.on(}));
-    console.log(this.$refs, (this.$refs.SwiperRef as any).$swiper);
   }
 
-  onClickSlide(index: number, name: string) {
+  onClickSlide(index: number, content: string) {
     this.activeIndex = index;
     this.swiper.slideTo(index);
-    this.$router.replace(`/${name}`);
+    this.$emit('slide-change', index, content);
   }
 }
 </script>
