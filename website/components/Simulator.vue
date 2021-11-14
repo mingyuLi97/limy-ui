@@ -5,7 +5,9 @@
  * @Date: 2021-11-14 17:32:27
 -->
 <template>
-  <div :class="b()">Simulator</div>
+  <div :class="b()">
+    <iframe src="example.html" frameborder="0"></iframe>
+  </div>
 </template>
 
 <script lang="ts">

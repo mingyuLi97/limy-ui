@@ -16,7 +16,8 @@ module.exports = () => {
     mode: 'development',
     devtool: 'cheap-module-source-map',
     entry: {
-      main: path.resolve(context, 'website/index.ts')
+      main: path.resolve(context, 'website/index.ts'),
+      simulator: path.resolve(context, 'examples/index.ts')
     },
     output: {
       chunkFilename: '[name].js',
@@ -25,7 +26,14 @@ module.exports = () => {
     stats: 'errors-warnings', // 只显示警告和错误信息
     plugins: [
       new HtmlWebpackPlugin({
-        template: path.resolve(context, 'website/public/index.html')
+        template: path.resolve(context, 'website/public/index.html'),
+        filename: 'index.html',
+        chunks: ['main']
+      }),
+      new HtmlWebpackPlugin({
+        template: path.resolve(context, 'examples/index.html'),
+        filename: 'example.html',
+        chunks: ['simulator']
       }),
       // 进度条插件
       new WebpackBar({
