@@ -108,7 +108,6 @@ export default class NavBar extends Vue {
   }
 
   onClickItem(item: { title: string; path: string }, index: number) {
-    console.log(item);
     this.$router.replace(item.path);
   }
 }

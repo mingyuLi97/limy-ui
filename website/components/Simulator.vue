@@ -6,18 +6,29 @@
 -->
 <template>
   <div :class="b()">
-    <iframe src="example.html" frameborder="0"></iframe>
+    <iframe :src="iframeSrc" frameborder="0" name="simulate"></iframe>
   </div>
 </template>
 
 <script lang="ts">
-import { Vue, Component } from 'vue-property-decorator';
+import { Vue, Component, Watch } from 'vue-property-decorator';
 import { createBEM } from '~/utils/create/bem';
 
 @Component
 export default class Simulator extends Vue {
+  path: string = '/';
+
+  get iframeSrc(): string {
+    return `example.html#${this.path}`;
+  }
+
   get b() {
     return createBEM('limy-doc-simulator');
+  }
+
+  @Watch('$route')
+  onRouteChange(to, from) {
+    this.path = to.path;
   }
 }
 </script>

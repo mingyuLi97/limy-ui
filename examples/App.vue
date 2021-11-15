@@ -1,6 +1,6 @@
 <template>
   <div>
-    <LimyTab :titles="titles" @slide-change="onSlideChange" />
+    <LimyTab v-if="!isIfrmae" :titles="titles" @slide-change="onSlideChange" />
     <keep-alive>
       <router-view />
     </keep-alive>
@@ -20,6 +20,10 @@ export default class App extends Vue {
 
   get titles(): string[] {
     return this.paths.map(path => (path === '/' ? 'home' : path.substr(1)));
+  }
+
+  get isIfrmae(): boolean {
+    return self !== top;
   }
 
   onSlideChange(index: number, content: string) {
