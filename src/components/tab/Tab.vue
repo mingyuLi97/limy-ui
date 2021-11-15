@@ -31,6 +31,8 @@ import 'swiper/css/swiper.css';
 })
 export default class Tab extends Vue {
   @Prop({ required: true, type: Array }) titles: string[];
+  @Prop({ type: Number, default: 0, validator: v => v >= 0 })
+  initialSlide: number;
 
   get classes() {
     const { b } = this;
@@ -48,6 +50,15 @@ export default class Tab extends Vue {
   swiperOptions: SwiperOptions = {
     slidesPerView: 'auto'
   };
+
+  created() {
+    let initialSlide = this.initialSlide;
+    if (initialSlide >= this.titles.length) {
+      console.error(`[Tab] initialSlide 的值必须小于 titles 的数量`);
+      initialSlide = 0;
+    }
+    this.activeIndex = this.swiperOptions.initialSlide = initialSlide;
+  }
 
   mounted() {
     this.swiper = (this.$refs.SwiperRef as any).$swiper;
