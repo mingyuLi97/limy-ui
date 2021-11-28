@@ -42,7 +42,7 @@ files.forEach(async p => {
     console.error(`Failed to parse file: ${abs}`);
     return;
   }
-  const mdPath = abs.replace('.vue', '.md');
+  const mdPath = path.dirname(abs) + '/README.md';
   const compName = markdownRes.componentName
     ? markdownRes.componentName
     : path.basename(abs, '.vue');
