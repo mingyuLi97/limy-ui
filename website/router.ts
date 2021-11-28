@@ -8,14 +8,10 @@ function getRoutes() {
     path: '/',
     component: Home
   });
-  const demos = require.context(
-    '~',
-    true,
-    /components\/[^/]*\/demo\/index\.vue$/i
-  );
+  const demos = require.context('~', true, /components\/[^/]*\/README.md$/i);
   demos.keys().forEach(demoPath => {
     routes.push({
-      path: ('/' + demoPath.match(/\/([^/]*)\/demo/)?.[1]) as string,
+      path: ('/' + demoPath.match(/\/([^/]*)\/README.md/)?.[1]) as string,
       component: demos(demoPath).default
     });
   });

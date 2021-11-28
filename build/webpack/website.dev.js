@@ -24,6 +24,17 @@ module.exports = () => {
       filename: '[name].js'
     },
     stats: 'errors-warnings', // 只显示警告和错误信息
+    module: {
+      rules: [
+        {
+          test: /\.md$/,
+          use: [
+            'vue-loader',
+            path.resolve(__dirname, 'markdown-loader/index.js')
+          ]
+        }
+      ]
+    },
     plugins: [
       new HtmlWebpackPlugin({
         template: path.resolve(context, 'website/public/index.html'),

@@ -5,11 +5,9 @@
 -->
 <template>
   <div :class="b()">
-    <section>
-      <keep-alive>
-        <router-view />
-      </keep-alive>
-    </section>
+    <keep-alive>
+      <router-view />
+    </keep-alive>
   </div>
 </template>
 

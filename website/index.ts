@@ -5,6 +5,7 @@ import LimyUI from '~/components';
 import './css/reset.css';
 import './css/index.scss';
 import './css/nav-bar.scss';
+import './css/doc-container.scss';
 Vue.use(LimyUI);
 
 new Vue({

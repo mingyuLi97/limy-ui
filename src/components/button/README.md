@@ -1,5 +1,7 @@
 # Button
 
+::: demo
+
 ## Props
 
 <!-- @vuese:Button:props:start -->
@@ -11,6 +13,8 @@
 | shape    | -           | `String`  | `false`  | default |
 
 <!-- @vuese:Button:props:end -->
+
+:::
 
 ## Slots
 

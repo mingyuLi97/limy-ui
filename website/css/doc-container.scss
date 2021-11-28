@@ -1,1 +1,42 @@
 // 中间区域
+.limy-doc-markdown {
+  padding: 30px;
+  & > h1 {
+    margin: 0 0 30px;
+    font-size: 30px;
+    cursor: default;
+  }
+
+  &-card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 12px #ebedf0;
+
+    & > h2 {
+      margin: 55px 0 20px;
+      font-weight: 400;
+      color: #1f2f3d;
+      font-size: 22px;
+    }
+
+    & > table {
+      width: 100%;
+      text-align: left;
+
+      & > thead {
+        color: #666;
+        font-weight: 400;
+      }
+
+      & > tbody {
+        color: #333;
+
+        td {
+          padding: 15px 15px 15px 0;
+          min-height: 40px;
+          border-bottom: 1px solid #d8d8d8;
+        }
+      }
+    }
+  }
+}

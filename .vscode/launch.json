@@ -12,6 +12,13 @@
       "program": "${workspaceFolder}/build/bin/gen-md.js",
       "preLaunchTask": "tsc: build - tsconfig.json",
       "outFiles": ["${workspaceFolder}/lib/**/*.js"]
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "dev:website",
+      "program": "${workspaceFolder}/build/bin/serve.js",
+      "args": ["--target=website"]
     }
   ]
 }
