@@ -11,6 +11,7 @@ const path = require('path');
 const fs = require('fs');
 const uppercamelcase = require('uppercamelcase');
 const prettier = require('prettier');
+const { renderMarkdown } = require('../markdown-render/index.ts');
 
 const cwd = process.cwd();
 const componentsPath = path.join(cwd, 'src/components');
@@ -36,18 +37,9 @@ files.forEach(async p => {
     basedir: path.dirname(abs),
     jsFile: abs.endsWith('.js')
   });
-  const r = new Render(parserRes);
-  const markdownRes = r.renderMarkdown();
 
-  if (!markdownRes) {
-    console.error(`Failed to parse file: ${abs}`);
-    return;
-  }
+  const mdContent = renderMarkdown(parserRes, path.basename(abs, '.vue'));
   const mdPath = path.dirname(abs) + '/README.md';
-  const compName = markdownRes.componentName
-    ? markdownRes.componentName
-    : path.basename(abs, '.vue');
-  const mdContent = markdownRes.content.replace(/\[name\]/g, compName);
   const mdContentBeautify = prettier.format(mdContent, {
     parser: 'markdown'
   });
