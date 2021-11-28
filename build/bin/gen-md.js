@@ -10,6 +10,7 @@ const Render = require('@vuese/markdown-render').Render;
 const path = require('path');
 const fs = require('fs');
 const uppercamelcase = require('uppercamelcase');
+const prettier = require('prettier');
 
 const cwd = process.cwd();
 const componentsPath = path.join(cwd, 'src/components');
@@ -47,8 +48,12 @@ files.forEach(async p => {
     ? markdownRes.componentName
     : path.basename(abs, '.vue');
   const mdContent = markdownRes.content.replace(/\[name\]/g, compName);
-  fs.writeFileSync(mdPath, mdContent, {
+  const mdContentBeautify = prettier.format(mdContent, {
+    parser: 'markdown'
+  });
+  fs.writeFileSync(mdPath, mdContentBeautify, {
     encoding: 'utf-8'
   });
+
   console.log(`Successfully created: ${mdPath}`);
 });
