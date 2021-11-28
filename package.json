@@ -24,6 +24,8 @@
     "@babel/core": "^7.0.0",
     "@limy-org/prettier-config": "^1.0.0",
     "@types/webpack-env": "^1.16.3",
+    "@vuese/markdown-render": "^2.11.3",
+    "@vuese/parser": "^2.10.3",
     "babel-loader": "^8.2.2",
     "commitizen": "^4.2.3",
     "css-loader": "^6.4.0",
