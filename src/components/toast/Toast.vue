@@ -3,7 +3,7 @@
 * @Description: 弹窗组件
 -->
 <template>
-  <div :class="classes" :style="hideTransiton">
+  <div :class="classes" :style="hideTransition">
     <img v-if="icon" :src="icon" />
     <span> {{ message }} </span>
   </div>
@@ -39,7 +39,7 @@ export default class Toast extends Vue {
     return createBEM('limy-toast');
   }
 
-  get hideTransiton() {
+  get hideTransition() {
     return `transition: opacity ${this.transitionDuration}ms linear;`;
   }
 
