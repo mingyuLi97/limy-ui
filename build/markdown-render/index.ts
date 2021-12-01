@@ -36,23 +36,23 @@ export function renderMarkdown(parserResult: ParserResult, title: string) {
     const parserRes = parserResult[key];
     const val = TABLE_MAP[key];
     if (parserRes) {
-      md += `::: API\n`;
+      md += `::: card\n`;
 
-      // 渲染 table
+      // 类型  ### Props
       md += `### ${upper(key)}\n`;
 
-      /**
-       * | Name     | Description | Type      | Required | Default |
-       * | -------- | ----------- | --------- | -------- | ------- |
-       * | type     | -           | `String`  | `false`  | default |
-       * | disabled | -           | `Boolean` | `false`  | false   |
-       * | shape    | -           | `String`  | `false`  | default |
-       */
+      // thead
       md += renderTableRow(val.map(v => v.title));
       md += renderTableRow(val.map(v => '-'));
 
+      // tbody
       parserRes.forEach(res => {
-        md += renderTableRow(val.map(v => res[v.key] || '-'));
+        md += renderTableRow(
+          val.map(({ key, code = false, defaultVal = '-' }) => {
+            const _res = res[key];
+            return _res ? (code ? '`' + _res + '`' : _res) : defaultVal;
+          })
+        );
       });
       md += ':::\n\n';
     }
