@@ -5,9 +5,25 @@
  */
 import { RenderKey } from '.';
 
+/**
+ * | Name     | Description | Type      | Required | Default |
+ * | -------- | ----------- | --------- | -------- | ------- |
+ * | type     | -           | `String`  | `false`  | default |
+ * | disabled | -           | `Boolean` | `false`  | false   |
+ * | shape    | -           | `String`  | `false`  | default |
+ */
+
+/**
+ * @param title 表头 - Name
+ * @param key 获取 vuese/parser 返回值
+ * @param code 是否标记为代码段  String => `String`
+ * @param defaultVal vuese/parser 没有返回值时的默认, 不设置为 '-'
+ */
 export interface ITableItem {
-  key: string;
   title: string;
+  key: string;
+  code?: boolean;
+  defaultVal?: any;
 }
 
 type ITableMap = {
@@ -26,7 +42,8 @@ export const TABLE_MAP: ITableMap = {
     },
     {
       key: 'type',
-      title: '类型'
+      title: '类型',
+      code: true
     },
     {
       key: 'default',
@@ -34,7 +51,8 @@ export const TABLE_MAP: ITableMap = {
     },
     {
       key: 'Required',
-      title: '必要的'
+      title: '必要的',
+      defaultVal: 'false'
     }
   ],
   events: [

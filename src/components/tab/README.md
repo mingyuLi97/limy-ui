@@ -1,22 +1,24 @@
 # Tab
 
-## Props
+## API
 
-<!-- @vuese:Tab:props:start -->
+::: card
 
-| Name         | Description | Type     | Required | Default |
-| ------------ | ----------- | -------- | -------- | ------- |
-| titles       | -           | `Array`  | `true`   | -       |
-| initialSlide | -           | `Number` | `false`  | 0       |
+### Props
 
-<!-- @vuese:Tab:props:end -->
+| 参数         | 说明 | 类型     | 默认值 | 必要的 |
+| ------------ | ---- | -------- | ------ | ------ |
+| titles       |      | `Array`  | -      | false  |
+| initialSlide |      | `Number` | 0      | false  |
 
-## Events
+:::
 
-<!-- @vuese:Tab:events:start -->
+::: card
 
-| Event Name   | Description | Parameters |
-| ------------ | ----------- | ---------- |
-| slide-change | -           | -          |
+### Events
 
-<!-- @vuese:Tab:events:end -->
+| 事件名       | 说明 | 回调参数 |
+| ------------ | ---- | -------- |
+| slide-change |      | -        |
+
+:::

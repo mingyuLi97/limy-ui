@@ -6,17 +6,14 @@ const markdownIt = new MarkdownIt({
   html: true
 });
 
-markdownIt.use(require('markdown-it-container'), 'demo', {
+markdownIt.use(require('markdown-it-container'), 'card', {
   validate(params) {
-    return params.trim().match(/^demo\s*(.*)$/);
+    return params.trim().match(/^card\s*(.*)$/);
   },
-  // 把demo代码放到div.kv-demo里面
   render(tokens, idx) {
-    const m = tokens[idx].info.trim().match(/^demo\s*(.*)$/);
     if (tokens[idx].nesting === 1) {
       // opening tag
       return `<div class="limy-doc-markdown-card">`;
-      return '<' + markdownIt.utils.escapeHtml(m[1]) + '</summary>\n';
     } else {
       // closing tag
       return '</div>\n';

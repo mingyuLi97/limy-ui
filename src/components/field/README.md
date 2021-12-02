@@ -1,11 +1,13 @@
 # Field
 
-## Props
+## API
 
-<!-- @vuese:Field:props:start -->
+::: card
 
-| Name        | Description | Type  | Required | Default    |
-| ----------- | ----------- | ----- | -------- | ---------- |
-| placeholder | -           | `any` | `false`  | 请输入文本 |
+### Props
 
-<!-- @vuese:Field:props:end -->
+| 参数        | 说明 | 类型  | 默认值     | 必要的 |
+| ----------- | ---- | ----- | ---------- | ------ |
+| placeholder |      | `any` | 请输入文本 | false  |
+
+:::

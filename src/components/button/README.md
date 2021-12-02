@@ -1,27 +1,25 @@
 # Button
 
-::: demo
+## API
 
-## Props
+::: card
 
-<!-- @vuese:Button:props:start -->
+### Props
 
-| Name     | Description | Type      | Required | Default |
-| -------- | ----------- | --------- | -------- | ------- |
-| type     | -           | `String`  | `false`  | default |
-| disabled | -           | `Boolean` | `false`  | false   |
-| shape    | -           | `String`  | `false`  | default |
-
-<!-- @vuese:Button:props:end -->
+| 参数     | 说明 | 类型      | 默认值  | 必要的 |
+| -------- | ---- | --------- | ------- | ------ |
+| type     |      | `String`  | default | false  |
+| disabled |      | `Boolean` | false   | false  |
+| shape    |      | `String`  | default | false  |
 
 :::
 
-## Slots
+::: card
 
-<!-- @vuese:Button:slots:start -->
+### Slots
 
-| Name    | Description | Default Slot Content |
-| ------- | ----------- | -------------------- |
-| default | -           | -                    |
+| 名称    | 说明 |
+| ------- | ---- |
+| default | -    |
 
-<!-- @vuese:Button:slots:end -->
+:::
