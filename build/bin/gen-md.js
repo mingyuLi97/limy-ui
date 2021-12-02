@@ -5,8 +5,7 @@
  */
 
 // 导入 parser 函数
-const { parser } = require('@vuese/parser');
-const Render = require('@vuese/markdown-render').Render;
+const { parser } = require('../vue-template-parser');
 const path = require('path');
 const fs = require('fs');
 const uppercamelcase = require('uppercamelcase');

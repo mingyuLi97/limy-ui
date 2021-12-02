@@ -3,8 +3,8 @@
  * @Author: 李明宇
  * @Date: 2021-11-28 19:57:43
  */
-import { ParserResult } from '@vuese/parser';
 
+import { ParserResult } from '../vue-template-parser';
 import { TABLE_MAP } from './table-map';
 
 export type RenderKey = Extract<
@@ -20,14 +20,22 @@ function renderTableRow(words: string[]): string {
   return words.map(word => `|${word}`).join('') + '|\n';
 }
 
+function toCard(title: string, content: string): string {
+  let card = '::: card\n';
+  card += `### ${upper(title)}\n`;
+  card += content;
+  card += '\n:::\n\n';
+  return card;
+}
+
 export function renderMarkdown(parserResult: ParserResult, title: string) {
   // 一级标题
   let md = `# ${title}\n\n`;
 
   // 描述
-  const desc = parserResult.componentDesc;
-  if (desc && desc.default.length) {
-    md += `${desc.default.join(' ')}\n\n`;
+  const desc = parserResult.header.description;
+  if (desc) {
+    md += toCard('介绍', desc);
   }
 
   md += '## API\n';
@@ -57,7 +65,5 @@ export function renderMarkdown(parserResult: ParserResult, title: string) {
       md += ':::\n\n';
     }
   });
-
-  console.log(md);
   return md;
 }
