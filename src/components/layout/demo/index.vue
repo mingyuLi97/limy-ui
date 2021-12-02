@@ -1,7 +1,28 @@
 <template>
   <div class="layout-container">
     <Layout>
+      <LayoutItem :span="6">
+        <div style="background: red">span:6</div>
+      </LayoutItem>
+      <LayoutItem :span="6">
+        <div style="background: red">span:6</div>
+      </LayoutItem>
+      <LayoutItem :span="6">
+        <div style="background: red">span:6</div>
+      </LayoutItem>
+      <LayoutItem :span="6">
+        <div style="background: red">span:6</div>
+      </LayoutItem>
+    </Layout>
+    <Layout>
       <LayoutItem :span="4">span:4</LayoutItem>
+      <LayoutItem :span="8">span:8</LayoutItem>
+      <LayoutItem :span="4" :offset="4">span:4;offset:4</LayoutItem>
+      <LayoutItem :span="4"> span:4</LayoutItem>
+    </Layout>
+
+    <Layout>
+      <LayoutItem :span="8">span:4</LayoutItem>
       <LayoutItem :span="8">span:8</LayoutItem>
       <LayoutItem :span="4" :offset="4">span:4;offset:4</LayoutItem>
       <LayoutItem :span="4"> span:4</LayoutItem>
@@ -20,7 +41,7 @@ export default class Index extends Vue {}
 
 <style lang="scss" scoped>
 .limy-layout__col {
-  background-color: skyblue;
+  // background-color: skyblue;
   overflow: hidden;
   word-break: break-all;
   text-align: center;

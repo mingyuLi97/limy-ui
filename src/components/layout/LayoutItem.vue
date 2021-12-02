@@ -2,6 +2,7 @@
 import { CreateElement } from 'vue';
 import { Vue, Component, Prop } from 'vue-property-decorator';
 import { createBEM } from '~/utils/create/bem';
+import Layout from './Layout.vue';
 
 @Component({
   components: {}
