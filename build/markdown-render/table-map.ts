@@ -48,12 +48,12 @@ export const TABLE_MAP: ITableMap = {
     {
       key: 'default',
       title: '默认值'
-    },
-    {
-      key: 'Required',
-      title: '必要的',
-      defaultVal: 'false'
     }
+    // {
+    //   key: 'Required',
+    //   title: '必要的',
+    //   defaultVal: 'false'
+    // }
   ],
   events: [
     {
