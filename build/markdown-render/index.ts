@@ -58,6 +58,9 @@ export function renderMarkdown(parserResult: ParserResult, title: string) {
         md += renderTableRow(
           val.map(({ key, code = false, defaultVal = '-' }) => {
             const _res = res[key];
+            if (Array.isArray(_res)) {
+              return _res.length ? _res.join(', ') : defaultVal;
+            }
             return _res ? (code ? '`' + _res + '`' : _res) : defaultVal;
           })
         );
