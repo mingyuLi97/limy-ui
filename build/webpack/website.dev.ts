@@ -3,16 +3,17 @@
  * @Author: 李明宇
  * @Date: 2021-10-20 21:46:13
  */
-const path = require('path');
-const WebpackBar = require('webpackbar');
-const { merge } = require('webpack-merge');
-const baseConfig = require('./base');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+import path from 'path';
+import WebpackBar from 'webpackbar';
+import Webpack from 'webpack';
+import { merge } from 'webpack-merge';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import baseConfig from './base';
 
 const context = process.cwd();
 
-module.exports = () => {
-  const demoDevConfig = {
+export const getWebsiteDevConfig = () => {
+  const devConfig: Webpack.Configuration = {
     mode: 'development',
     devtool: 'cheap-module-source-map',
     entry: {
@@ -52,5 +53,5 @@ module.exports = () => {
       })
     ]
   };
-  return merge(baseConfig, demoDevConfig);
+  return merge(baseConfig, devConfig);
 };

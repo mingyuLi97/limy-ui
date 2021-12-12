@@ -3,25 +3,24 @@
  * @Author: 李明宇
  * @Date: 2021-10-20 21:34:30
  */
-const Webpack = require('webpack');
-const WebpackDevServer = require('webpack-dev-server');
-const { getFreePort, getLocalIp } = require('../utils/get-free-port');
-const clearConsole = require('../utils/clear-console');
-const chalk = require('chalk');
-const parseArgs = require('../utils/parse-args');
+import ora from 'ora';
+import chalk from 'chalk';
+import Webpack from 'webpack';
+import WebpackDevServer from 'webpack-dev-server';
+import clearConsole from '../utils/clear-console';
+import { getFreePort, getLocalIp } from '../utils/get-free-port';
+import { getWebsiteDevConfig } from '../webpack/website.dev';
+import { getExampleDevConfig } from '../webpack/example.dev';
 
-// const chalk = require('chalk')
-const ora = require('ora');
-
-const target = parseArgs('target') || 'example';
-const webpackConfig =
-  target === 'example'
-    ? require('../webpack/example.dev')()
-    : require('../webpack/website.dev')();
+interface IUrls {
+  local: string;
+  network: string;
+}
+export type ServeTarget = 'example' | 'website';
 
 const spinner = ora('Starting development server...');
 
-function printInstructions(urls) {
+function printInstructions(urls: IUrls, target: ServeTarget) {
   console.log(`  App ${target} running at:`);
   console.log();
 
@@ -31,7 +30,9 @@ function printInstructions(urls) {
   console.log();
 }
 
-async function serve() {
+export default async function serve(target: ServeTarget) {
+  const webpackConfig =
+    target === 'example' ? getExampleDevConfig() : getWebsiteDevConfig();
   const port = await getFreePort(8888);
   spinner.start();
   const compiler = Webpack(webpackConfig);
@@ -56,7 +57,7 @@ async function serve() {
 
   compiler.hooks.done.tap('done', () => {
     clearConsole();
-    printInstructions(urls);
+    printInstructions(urls, target);
   });
 
   // Ctrl + C 触发
@@ -71,5 +72,3 @@ async function serve() {
     spinner.stop();
   });
 }
-
-serve();

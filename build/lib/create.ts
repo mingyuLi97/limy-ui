@@ -4,16 +4,16 @@
  * @Date: 2021-11-04 21:32:18
  */
 
-const fs = require('fs');
-const path = require('path');
-const uppercamelcase = require('uppercamelcase');
-const inquirer = require('inquirer');
-const { execSync } = require('child_process');
+import fs from 'fs';
+import path from 'path';
+import uppercamelcase from 'uppercamelcase';
+import inquirer from 'inquirer';
+import { execSync } from 'child_process';
 const context = process.cwd();
 
 const componentsPath = path.resolve(context, 'src/components');
 
-(async function () {
+export default async function create() {
   const components = fs.readdirSync(componentsPath);
   const promptList = [
     {
@@ -89,7 +89,7 @@ const componentsPath = path.resolve(context, 'src/components');
   });
   console.log('done.');
   console.log();
-})();
+}
 
 /**
  * index.ts 模版

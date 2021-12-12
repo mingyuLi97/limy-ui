@@ -6,8 +6,11 @@
   "author": "limy <mingyuli1997@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "node ./build/bin/serve.js --target=example",
-    "dev:website": "node ./build/bin/serve.js --target=website",
+    "dev": "npx @babel/node --extensions .ts bin/limy-ui.ts serve example",
+    "dev:website": "npx @babel/node --extensions .ts bin/limy-ui.ts serve website",
+    "build:md": "npx @babel/node --extensions .ts bin/limy-ui.ts build markdown",
+    "build:component": "npx @babel/node --extensions .ts bin/limy-ui.ts build component",
+    "build:website": "npx @babel/node --extensions .ts bin/limy-ui.ts build website",
     "gen:md": "npx @babel/node build/bin/gen-md.js --extensions \".ts\"",
     "new": "node ./build/bin/create.js",
     "prepare": "husky install"

@@ -3,12 +3,13 @@
  * @Author: 李明宇
  * @Date: 2021-10-20 21:46:08
  */
-const VueLoaderPlugin = require('vue-loader/lib/plugin');
-const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
-const path = require('path');
+import path from 'path';
+import Webpack from 'webpack';
+import { VueLoaderPlugin } from 'vue-loader';
+import FriendlyErrorsWebpackPlugin from 'friendly-errors-webpack-plugin';
 
 const context = process.cwd();
-module.exports = {
+const baseConfig: Webpack.Configuration = {
   resolve: {
     extensions: ['.js', '.vue', '.ts', '.d.ts'],
     alias: {
@@ -78,9 +79,12 @@ module.exports = {
     ]
   },
   plugins: [
+    // @ts-ignore
     new VueLoaderPlugin(),
     new FriendlyErrorsWebpackPlugin({
       clearConsole: false
     })
   ]
 };
+
+export default baseConfig;

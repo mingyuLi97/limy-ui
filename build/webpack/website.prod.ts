@@ -1,7 +1,7 @@
 /*
- * @Description: 开发环境 webpack 配置 --example
+ * @Description: 文档系统的生产环境配置
  * @Author: 李明宇
- * @Date: 2021-10-20 21:46:13
+ * @Date: 2021-12-12 16:17:44
  */
 const path = require('path');
 const WebpackBar = require('webpackbar');
@@ -13,7 +13,7 @@ const context = process.cwd();
 
 module.exports = () => {
   const devConfig = {
-    mode: 'development',
+    mode: 'production',
     devtool: 'cheap-module-source-map',
     entry: {
       main: path.resolve(context, 'examples/index.ts')
