@@ -17,14 +17,22 @@ import { RenderKey } from '.';
  * @param title 表头 - Name
  * @param key 获取 vuese/parser 返回值
  * @param code 是否标记为代码段  String => `String`
+ * @param typeface 是否标记为加粗/斜体 String => **String**
  * @param defaultVal vuese/parser 没有返回值时的默认, 不设置为 '-'
  */
 export interface ITableItem {
   title: string;
   key: string;
   code?: boolean;
+  typeface?: Typeface;
   defaultVal?: any;
 }
+
+/**
+ * bold：粗体
+ * italic：斜体
+ */
+export type Typeface = 'bold' | 'italic';
 
 type ITableMap = {
   [P in RenderKey]: ITableItem[];
@@ -43,6 +51,7 @@ export const TABLE_MAP: ITableMap = {
     {
       key: 'type',
       title: '类型',
+      typeface: 'italic',
       code: true
     },
     {

@@ -5,12 +5,14 @@
  */
 
 import { ParserResult } from '../vue-template-parser';
-import { TABLE_MAP } from './table-map';
+import { TABLE_MAP, Typeface } from './table-map';
 
 export type RenderKey = Extract<
   keyof ParserResult,
   'props' | 'slots' | 'events' | 'methods'
 >;
+
+type TypefaceMapValue = string | { prefix: string; suffix: string };
 
 function upper(word: string): string {
   return word[0].toUpperCase() + word.slice(1);
@@ -26,6 +28,29 @@ function toCard(title: string, content: string): string {
   card += content;
   card += '\n:::\n\n';
   return card;
+}
+
+/**
+ * 转换文字的字体 加粗 ｜ 斜体 等等
+ * @param text 输入的文本
+ * @param type 接收的类型
+ * @returns 格式化后的文本
+ */
+function transformTypeface(text: string, type: Typeface): string {
+  // 每一种类型包含前缀和后缀，如果是字符串相当于 前缀和后缀是一样的
+  const map: { [K in Typeface]: TypefaceMapValue } = {
+    bold: '**',
+    italic: '_'
+  };
+  const val: TypefaceMapValue = map[type];
+
+  return typeof val === 'string'
+    ? val + text + val
+    : val.prefix + text + val.suffix;
+}
+
+function toCode(text: string) {
+  return `\`${text}\``;
 }
 
 export function renderMarkdown(parserResult: ParserResult, title: string) {
@@ -56,12 +81,29 @@ export function renderMarkdown(parserResult: ParserResult, title: string) {
       // tbody
       parserRes.forEach(res => {
         md += renderTableRow(
-          val.map(({ key, code = false, defaultVal = '-' }) => {
+          val.map(({ key, code = false, defaultVal = '-', typeface }) => {
+            let result: string = defaultVal;
+
             const _res = res[key];
             if (Array.isArray(_res)) {
-              return _res.length ? _res.join(', ') : defaultVal;
+              result = _res.length ? _res.join(', ') : defaultVal;
+            } else if (_res) {
+              let text = _res;
+              // 一定要先 toCode 然后在转换字体 不然 md 解析会失败
+              if (code) {
+                text = toCode(text);
+              }
+              if (typeface) {
+                text = transformTypeface(text, typeface);
+              }
+              result = text;
             }
-            return _res ? (code ? '`' + _res + '`' : _res) : defaultVal;
+            return (
+              result
+                // 防止返回的数据里有 ｜，该符号会与 md 表格冲突
+                .replace(/\|/gi, ' ')
+                .replace(/[\'\"]/g, '`')
+            );
           })
         );
       });
