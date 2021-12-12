@@ -52,6 +52,7 @@ type ParserPlugin =
 export type BabelParserPlugins = { [key in ParserPlugin]?: boolean };
 
 export interface PropsResult {
+  tsType: string;
   type: PropType;
   name: string;
   typeDesc?: string[];

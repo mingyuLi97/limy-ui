@@ -366,6 +366,11 @@ export function parseJavascript(
         const result: PropsResult = {
           name: propName ? propName : (path.node.key as bt.Identifier).name,
           //null for backward compatibility,
+          /**
+           * @todo
+           * 后续可以通过 ast 判断出 prop 的类型，这样可以减少注释
+           */
+          tsType: source.slice(typeAnnotationStart, typeAnnotationEnd) || null,
           type: source.slice(typeAnnotationStart, typeAnnotationEnd) || null,
           describe: getComments(path.node).default
         };
