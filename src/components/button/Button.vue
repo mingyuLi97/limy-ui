@@ -17,6 +17,10 @@ import { createBEM } from '~/utils/create/bem';
   components: {}
 })
 export default class Button extends Vue {
+  /**
+   * 类型
+   * 可选值为：'default' | 'primary' | 'info' | 'warning' | 'danger'
+   */
   @Prop({
     type: String,
     default: 'default',
@@ -25,12 +29,19 @@ export default class Button extends Vue {
   })
   type!: 'default' | 'primary' | 'info' | 'warning' | 'danger';
 
+  /**
+   * 是否禁用按钮
+   */
   @Prop({
     type: Boolean,
     default: false
   })
   disabled!: boolean;
 
+  /**
+   * 按钮形状
+   * 可选值为：'square' | 'round' | 'default';
+   */
   @Prop({
     type: String,
     default: 'default',

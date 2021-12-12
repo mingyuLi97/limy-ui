@@ -1076,6 +1076,11 @@
   resolved "https://registry.nlark.com/@types/parse-json/download/@types/parse-json-4.0.0.tgz"
   integrity sha1-L4u0QUNNFjs1+4/9zNcTiSf/uMA=
 
+"@types/prettier@^2.4.2":
+  version "2.4.2"
+  resolved "https://registry.npmmirror.com/@types/prettier/download/@types/prettier-2.4.2.tgz#4c62fae93eb479660c3bd93f9d24d561597a8281"
+  integrity sha512-ekoj4qOQYp7CvjX8ZDBgN86w3MqQhLE1hczEJbEIjgFEumDy+na/4AJAbLXfgEWFNB2pKadM5rPFtuSGMWK7xA==
+
 "@types/retry@^0.12.0":
   version "0.12.1"
   resolved "https://registry.nlark.com/@types/retry/download/@types/retry-0.12.1.tgz"
@@ -4433,10 +4438,15 @@ postcss@^8.2.15, postcss@^8.3.9:
     picocolors "^1.0.0"
     source-map-js "^0.6.2"
 
-"prettier@^1.18.2 || ^2.0.0", prettier@^2.4.1:
+"prettier@^1.18.2 || ^2.0.0":
   version "2.4.1"
   resolved "https://registry.nlark.com/prettier/download/prettier-2.4.1.tgz?cache=0&sync_timestamp=1631777167012&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fprettier%2Fdownload%2Fprettier-2.4.1.tgz"
   integrity sha1-Zx4RyJwUpM/Ids5WQQbEpnJsn1w=
+
+prettier@^2.5.1:
+  version "2.5.1"
+  resolved "https://registry.npmmirror.com/prettier/download/prettier-2.5.1.tgz#fff75fa9d519c54cf0fce328c1017d94546bc56a"
+  integrity sha512-vBZcPRUR5MZJwoyi3ZoyQlc1rXeEck8KgeC9AwwOn+exuxLxq5toTRDTSaVrXHxelDMHy9zlicw8u66yxoSUFg==
 
 pretty-error@^4.0.0:
   version "4.0.0"
