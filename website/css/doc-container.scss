@@ -26,9 +26,10 @@
     }
 
     & > p {
-      color: #34495e;
       font-size: 15px;
       line-height: 26px;
+      color: #5e6d82;
+      -webkit-font-smoothing: antialiased;
     }
 
     & > table {
@@ -52,6 +53,16 @@
           padding: 15px 15px 15px 0;
           min-height: 40px;
           border-bottom: 1px solid #d8d8d8;
+          color: #5e6d82;
+          -webkit-font-smoothing: antialiased;
+          em {
+            code {
+              color: #4fc08d;
+              background-color: transparent;
+              font-weight: 600;
+              padding-left: 0;
+            }
+          }
           code {
             display: inline;
             margin: 0 2px;
