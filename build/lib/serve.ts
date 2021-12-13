@@ -36,20 +36,19 @@ export default async function serve(target: ServeTarget) {
   const port = await getFreePort(8888);
   spinner.start();
   const compiler = Webpack(webpackConfig);
-
-  const devServer = new WebpackDevServer(
-    {
-      port,
-      hot: true,
-      open: false,
-      host: '0.0.0.0',
-      client: {
-        logging: 'error'
-      },
-      ...(webpackConfig.devServer || {})
+  const devServerConfig: WebpackDevServer.Configuration = {
+    port,
+    hot: true,
+    open: true,
+    host: '0.0.0.0',
+    client: {
+      logging: 'error'
     },
-    compiler
-  );
+    // @ts-ignore
+    ...(webpackConfig.devServer || {})
+  };
+  // @ts-ignore
+  const devServer = new WebpackDevServer(devServerConfig, compiler);
   const urls = {
     local: `http://localhost:${port}`,
     network: `http://${getLocalIp()}:${port}`

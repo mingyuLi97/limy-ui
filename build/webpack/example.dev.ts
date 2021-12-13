@@ -4,7 +4,7 @@
  * @Date: 2021-10-20 21:46:13
  */
 import path from 'path';
-import Webpack from 'webpack';
+import { Configuration } from 'webpack';
 import WebpackBar from 'webpackbar';
 import { merge } from 'webpack-merge';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
@@ -13,7 +13,7 @@ import baseConfig from './base';
 const context = process.cwd();
 
 export const getExampleDevConfig = () => {
-  const devConfig: Webpack.Configuration = {
+  const devConfig: Configuration = {
     mode: 'development',
     devtool: 'cheap-module-source-map',
     entry: {
