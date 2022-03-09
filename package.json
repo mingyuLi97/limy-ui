@@ -1,38 +1,24 @@
 {
-  "name": "@mfelibs/sina-aio-components",
+  "name": "sn-ui",
   "version": "1.0.0",
-  "description": "新浪公共组件库",
+  "description": "新浪新闻移动端组件库",
+  "main": "index.js",
+  "repository": "ssh://git@gitlab.weibo.cn:2222/SINA_MFE_COMPONENTS/sina-aio-components.git",
+  "author": "mingyu6 <mingyu6@staff.sina.com.cn>",
+  "license": "MIT",
   "private": true,
   "workspaces": [
     "packages/*"
   ],
-  "scripts": {
-    "dev": "vite --host"
-  },
-  "dependencies": {
-    "@mfelibs/aio-plugins": "^1.0.7",
-    "@mfelibs/base-css": "^3.1.16",
-    "@mfelibs/universal-framework": "^0.3.256",
-    "vue": "^2.6.14",
-    "vue-class-component": "^7.2.3",
-    "vue-property-decorator": "^8.4.2"
-  },
   "devDependencies": {
-    "@vue/compiler-sfc": "^3.1.4",
-    "inquirer": "^8.1.1",
+    "husky": "7.0.4",
     "lerna": "^4.0.0",
-    "typescript": "^3.9.3",
-    "uppercamelcase": "^3.0.0",
-    "vite": "2.3.7",
-    "vite-plugin-html": "2.0.7",
-    "vite-plugin-vue2": "1.6.2",
-    "vue-template-compiler": "^2.6.11"
+    "lint-staged": "11.2.3",
+    "prettier": "^2.5.1"
   },
-  "engines": {
-    "node": ">= 8.0.0",
-    "npm": ">= 3.0.0"
-  },
-  "license": "MIT",
-  "author": "",
-  "repository": ""
+  "lint-staged": {
+    "*.{js,ts,json,vue,md}": [
+      "prettier --config prettier.config.js --write"
+    ]
+  }
 }
