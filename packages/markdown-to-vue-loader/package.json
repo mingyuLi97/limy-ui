@@ -1,7 +1,7 @@
 {
   "name": "@mfelibs/markdown-to-vue-loader",
   "version": "1.0.0",
-  "description": ".md 文件转换成 .vue",
+  "description": ".md 文件转换成 .vue 的 webpack-loader",
   "keywords": [
     "markdown-to-vue-loader"
   ],

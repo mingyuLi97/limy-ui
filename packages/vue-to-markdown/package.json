@@ -1,0 +1,29 @@
+{
+  "name": "@mfelibs/vue-to-markdown",
+  "version": "1.0.0",
+  "description": "把 vue 文件转换成 markdown 文档",
+  "author": "mingyu6 <mingyu6@staff.sina.com.cn>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "registry": "http://registry.cnpm.sina.com.cn/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@gitlab.weibo.cn:2222/SINA_MFE_COMPONENTS/sina-aio-components.git"
+  },
+  "scripts": {
+    "test": "node __tests__/index.js",
+    "build": "rm -rf lib && tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@vuese/parser": "^2.10.3",
+    "prettier": "^2.5.1"
+  },
+  "devDependencies": {}
+}
