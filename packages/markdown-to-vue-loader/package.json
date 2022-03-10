@@ -1,0 +1,48 @@
+{
+  "name": "@mfelibs/markdown-to-vue-loader",
+  "version": "1.0.0",
+  "description": ".md 文件转换成 .vue",
+  "keywords": [
+    "markdown-to-vue-loader"
+  ],
+  "author": "mingyu6 <mingyu6@staff.sina.com.cn>",
+  "license": "ISC",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "test": "webpack --config ./__tests__/webpack.config.js",
+    "build": "rm -rf lib && tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "markdown-it": "^12.3.2",
+    "markdown-it-container": "^3.0.0"
+  },
+  "peerDependencies": {
+    "typescript": "^4.6.2",
+    "vue-loader": "^15.9.8",
+    "vue-template-compiler": "^2.6.14",
+    "webpack": "^4.46.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.6.2",
+    "@types/markdown-it": "^12.2.3",
+    "@types/markdown-it-container": "^2.0.5",
+    "webpack": "^4.46.0",
+    "webpack-command": "^0.4.1",
+    "vue-loader": "^15.9.8",
+    "vue-template-compiler": "^2.6.14"
+  },
+  "maintainers": [
+    "mingyu6"
+  ],
+  "publishConfig": {
+    "registry": "http://registry.cnpm.sina.com.cn/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@gitlab.weibo.cn:2222/SINA_MFE_COMPONENTS/sina-aio-components.git"
+  }
+}

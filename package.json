@@ -11,6 +11,7 @@
     "packages/*"
   ],
   "devDependencies": {
+    "@types/node": "^17.0.21",
     "husky": "7.0.4",
     "lerna": "^4.0.0",
     "lint-staged": "11.2.3",

@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "sourceMap": true,
+    "target": "esnext",
+    "module": "esnext",
+    "allowJs": true,
+    "noUnusedLocals": true,
+    "noImplicitAny": false,
+    "noEmitOnError": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "strictNullChecks": true,
+    "removeComments": false,
+    "moduleResolution": "node",
+    "declaration": true,
+    "jsx": "preserve",
+    "lib": ["esnext"],
+    "rootDir": ".",
+    "paths": {
+      "@mfelibs/markdown-to-vue-loader": ["packages/markdown-to-vue-loader/lib"]
+    }
+  },
+  "include": ["packages/*/*"],
+  "exclude": ["node_modules"]
+}
