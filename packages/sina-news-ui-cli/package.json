@@ -12,6 +12,9 @@
   "files": [
     "lib"
   ],
+  "maintainers": [
+    "mingyu6"
+  ],
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
     "build": "rm -rf lib && tsc -p tsconfig.json",
@@ -49,5 +52,5 @@
     "@types/ora": "^3.2.0",
     "@types/webpack-dev-server": "^4.7.2"
   },
-  "gitHead": "d88fc3ce5d48dc6c650d52321f716ee0f1a5a50b"
+  "gitHead": "0535dc4f1ca532ed0e492ec9dc629fe59e7ebd81"
 }
