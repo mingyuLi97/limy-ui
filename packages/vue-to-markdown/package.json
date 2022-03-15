@@ -1,6 +1,6 @@
 {
   "name": "@mfelibs/vue-to-markdown",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "把 vue 文件转换成 markdown 文档",
   "author": "mingyu6 <mingyu6@staff.sina.com.cn>",
   "homepage": "",
@@ -24,6 +24,5 @@
   "dependencies": {
     "@vuese/parser": "^2.10.3",
     "prettier": "^2.5.1"
-  },
-  "devDependencies": {}
+  }
 }

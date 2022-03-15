@@ -1,6 +1,6 @@
 {
   "name": "@mfelibs/markdown-to-vue-loader",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": ".md 文件转换成 .vue 的 webpack-loader",
   "keywords": [
     "markdown-to-vue-loader"
@@ -27,13 +27,13 @@
     "webpack": "^4.46.0"
   },
   "devDependencies": {
-    "typescript": "^4.6.2",
     "@types/markdown-it": "^12.2.3",
     "@types/markdown-it-container": "^2.0.5",
-    "webpack": "^4.46.0",
-    "webpack-command": "^0.4.1",
+    "typescript": "^4.6.2",
     "vue-loader": "^15.9.8",
-    "vue-template-compiler": "^2.6.14"
+    "vue-template-compiler": "^2.6.14",
+    "webpack": "^4.46.0",
+    "webpack-command": "^0.4.1"
   },
   "maintainers": [
     "mingyu6"

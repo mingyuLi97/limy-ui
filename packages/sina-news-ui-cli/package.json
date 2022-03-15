@@ -1,6 +1,6 @@
 {
   "name": "@mfelibs/sina-news-ui-cli",
-  "version": "0.0.1-3",
+  "version": "0.0.2-0",
   "description": "sina-news-ui 的脚手架",
   "author": "mingyu6 <mingyu6@staff.sina.com.cn>",
   "license": "ISC",
@@ -18,8 +18,8 @@
     "dev": "tsc --watch"
   },
   "dependencies": {
-    "@mfelibs/markdown-to-vue-loader": "^1.0.0",
-    "@mfelibs/vue-to-markdown": "^1.0.0",
+    "@mfelibs/markdown-to-vue-loader": "^1.0.1",
+    "@mfelibs/vue-to-markdown": "^1.0.1",
     "css-loader": "^6.7.1",
     "dev-ip": "^1.0.1",
     "friendly-errors-webpack-plugin": "^1.7.0",
