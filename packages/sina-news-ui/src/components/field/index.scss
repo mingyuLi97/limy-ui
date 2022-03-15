@@ -1,0 +1,24 @@
+.limy-field {
+  position: relative;
+  display: flex;
+  padding: 10px 16px;
+  background-color: pink;
+  &__title {
+    color: #646566;
+    width: 50px;
+    margin-right: 12px;
+  }
+
+  &__value {
+    display: flex;
+    align-items: center;
+    input {
+      // background-color: red;
+      display: block;
+      border-width: 0;
+      outline: none;
+      line-height: inherit;
+      box-sizing: border-box;
+    }
+  }
+}

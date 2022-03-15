@@ -1,0 +1,74 @@
+@import url('./nav-bar.scss');
+
+body {
+  min-width: 1100px;
+  background-color: #f7f8fa;
+}
+
+$doc-max-width: 1680px;
+
+.limy-doc {
+  display: block;
+  overflow-x: auto;
+  z-index: 1;
+  &-header {
+    width: 100%;
+    position: fixed;
+    z-index: 11;
+
+    background-color: #001938;
+    line-height: 60px;
+    & span {
+      margin-left: 60px;
+      color: #fff;
+    }
+  }
+
+  &-nav {
+    position: fixed;
+    top: 60px;
+    bottom: 0px;
+    background: #fff;
+    box-shadow: 0 8px 12px #ebedf0;
+    width: 220px;
+    overflow-y: scroll;
+    @media screen and (min-width: $doc-max-width) {
+      left: 50%;
+      margin-left: -($doc-max-width / 2);
+    }
+  }
+
+  &-container {
+    margin: 0 auto;
+    box-sizing: border-box;
+    max-width: $doc-max-width;
+    padding-top: 60px;
+    padding-left: 220px;
+    padding-right: 405px;
+
+    & section {
+      padding: 30px;
+    }
+  }
+
+  &-simulator {
+    position: fixed;
+    top: 90px;
+    right: 30px;
+    box-sizing: border-box;
+    width: 375px;
+    height: 667px;
+    overflow: hidden;
+    background: #fafafa;
+    border-radius: 10px;
+    box-shadow: #ebedf0 0 4px 12px;
+    @media screen and (min-width: $doc-max-width) {
+      right: 50%;
+      margin-right: -($doc-max-width / 2);
+    }
+    & iframe {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

@@ -45,7 +45,7 @@ function usePlugin(card: ICardItem) {
 // 导出一个函数，source为webpack传递给loader的文件源内容
 export default function (source: string) {
   // 获取该loader的配置项
-  const options: IMd2VueLoaderOptions = loaderUtils.getOptions(this);
+  const options: IMd2VueLoaderOptions = loaderUtils.getOptions(this) ?? {};
   const wrapper = options.rootTag || DEFAULT_WRAPPER;
   const cards = options.cards?.length ? options.cards : [DEFAULT_CARD];
 

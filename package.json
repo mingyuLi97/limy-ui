@@ -7,6 +7,10 @@
   "author": "mingyu6 <mingyu6@staff.sina.com.cn>",
   "license": "MIT",
   "private": true,
+  "scripts": {
+    "dev": "yarn workspace @mfelibs/sina-news-ui run dev",
+    "dev:doc": "yarn workspace @mfelibs/sina-news-ui run dev:doc"
+  },
   "workspaces": [
     "packages/*"
   ],

@@ -15,8 +15,9 @@
     "removeComments": false,
     "moduleResolution": "node",
     "declaration": true,
+    "skipLibCheck": true,
     "jsx": "preserve",
-    "lib": ["esnext"],
+    "lib": ["esnext", "DOM"],
     "rootDir": ".",
     "paths": {
       "@mfelibs/markdown-to-vue-loader": ["packages/markdown-to-vue-loader/lib"]

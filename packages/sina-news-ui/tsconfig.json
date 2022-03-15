@@ -1,0 +1,31 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "rootDir": ".",
+    "module": "ESNext",
+    "outDir": "lib",
+    "baseUrl": ".",
+    "moduleResolution": "node",
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": false,
+    "target": "es2017",
+    "esModuleInterop": true,
+    "incremental": false,
+    "skipLibCheck": true,
+    "paths": {
+      "~/*": ["src/*"],
+      "@types/*": ["types/*"]
+    }
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.vue",
+    "examples/**/*.ts",
+    "examples/**/*.vue",
+    "website/**/*.ts",
+    "website/**/*.vue",
+    "types/**/*.ts"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "name": "@mfelibs/sina-news-ui",
+  "version": "1.0.0",
+  "description": "新浪新闻移动端组件库",
+  "author": "mingyu6 <mingyu6@staff.sina.com.cn>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "testa": "node index.js",
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "dev": "snui-cli serve example",
+    "dev:doc": "snui-cli serve website"
+  },
+  "dependencies": {
+    "swiper": "5",
+    "vue": "^2.6.14",
+    "vue-awesome-swiper": "^4.1.1",
+    "vue-class-component": "^7.2.6",
+    "vue-property-decorator": "^9.1.2",
+    "vue-router": "^3.5.3"
+  },
+  "devDependencies": {
+    "@mfelibs/sina-news-ui-cli": "^0.0.1-3",
+    "@types/webpack-dev-server": "^4.5.0",
+    "@types/webpack-env": "^1.16.3"
+  }
+}
