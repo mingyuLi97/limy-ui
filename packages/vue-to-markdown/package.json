@@ -1,6 +1,6 @@
 {
   "name": "@mfelibs/vue-to-markdown",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "把 vue 文件转换成 markdown 文档",
   "author": "mingyu6 <mingyu6@staff.sina.com.cn>",
   "homepage": "",
