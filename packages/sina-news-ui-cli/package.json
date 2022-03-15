@@ -49,5 +49,5 @@
     "@types/ora": "^3.2.0",
     "@types/webpack-dev-server": "^4.7.2"
   },
-  "gitHead": "5ccacccf193d66cdba0f4cb82ccca5c80a02a5a6"
+  "gitHead": "d88fc3ce5d48dc6c650d52321f716ee0f1a5a50b"
 }

@@ -10,6 +10,9 @@
   "files": [
     "lib"
   ],
+  "maintainers": [
+    "mingyu6"
+  ],
   "publishConfig": {
     "registry": "http://registry.cnpm.sina.com.cn/"
   },
@@ -26,5 +29,5 @@
     "@vuese/parser": "^2.10.3",
     "prettier": "^2.5.1"
   },
-  "gitHead": "5ccacccf193d66cdba0f4cb82ccca5c80a02a5a6"
+  "gitHead": "d88fc3ce5d48dc6c650d52321f716ee0f1a5a50b"
 }
