@@ -14,7 +14,8 @@
   ],
   "scripts": {
     "test": "webpack --config ./__tests__/webpack.config.js",
-    "build": "rm -rf lib && tsc -p tsconfig.json"
+    "build": "rm -rf lib && tsc -p tsconfig.json",
+    "prepublish": "yarn build"
   },
   "dependencies": {
     "markdown-it": "^12.3.2",
@@ -44,5 +45,6 @@
   "repository": {
     "type": "git",
     "url": "ssh://git@gitlab.weibo.cn:2222/SINA_MFE_COMPONENTS/sina-aio-components.git"
-  }
+  },
+  "gitHead": "5ccacccf193d66cdba0f4cb82ccca5c80a02a5a6"
 }

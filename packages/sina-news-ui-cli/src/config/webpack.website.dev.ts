@@ -24,6 +24,9 @@ export const getWebsiteDevConfig = () => {
       chunkFilename: '[name].js',
       filename: '[name].js'
     },
+    cache: {
+      type: 'filesystem'
+    },
     stats: 'errors-warnings', // 只显示警告和错误信息
     module: {
       rules: [

@@ -15,7 +15,8 @@
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
     "build": "rm -rf lib && tsc -p tsconfig.json",
-    "dev": "tsc --watch"
+    "dev": "tsc --watch",
+    "prepublish": "yarn build"
   },
   "dependencies": {
     "@mfelibs/markdown-to-vue-loader": "^1.0.1",
@@ -47,5 +48,6 @@
   "devDependencies": {
     "@types/ora": "^3.2.0",
     "@types/webpack-dev-server": "^4.7.2"
-  }
+  },
+  "gitHead": "5ccacccf193d66cdba0f4cb82ccca5c80a02a5a6"
 }
