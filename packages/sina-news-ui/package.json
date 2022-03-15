@@ -1,6 +1,6 @@
 {
   "name": "@mfelibs/sina-news-ui",
-  "version": "1.0.2-alpha.0",
+  "version": "1.0.2-alpha.1",
   "description": "新浪新闻移动端组件库",
   "author": "mingyu6 <mingyu6@staff.sina.com.cn>",
   "homepage": "",
@@ -27,7 +27,7 @@
     "vue-router": "^3.5.3"
   },
   "devDependencies": {
-    "@mfelibs/sina-news-ui-cli": "^0.0.3-alpha.0",
+    "@mfelibs/sina-news-ui-cli": "^0.0.3",
     "@types/webpack-dev-server": "^4.5.0",
     "@types/webpack-env": "^1.16.3"
   },
