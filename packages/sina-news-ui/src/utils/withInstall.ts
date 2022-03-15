@@ -7,7 +7,7 @@ export type WithInstall<T> = T & {
 export function withInstall<T extends VueConstructor<Vue>>(component: T) {
   // @ts-ignore
   component.install = (Vue: VueConstructor<Vue>) => {
-    Vue.component(`Limy${component.name}`, component);
+    Vue.component(`sn${component.name}`, component);
   };
   return component as WithInstall<T>;
 }

@@ -37,7 +37,7 @@ export default class Field extends Vue {
   }
 
   get b() {
-    return createBEM('limy-field');
+    return createBEM('sn-field');
   }
 }
 </script>

@@ -3,22 +3,22 @@
     <ul>
       <li>
         <h2>按钮类型</h2>
-        <limy-button>默认按钮</limy-button>
-        <limy-button type="danger">危险按钮</limy-button>
-        <limy-button type="warning">警告按钮</limy-button>
-        <limy-button type="info">信息按钮</limy-button>
-        <limy-button type="primary">主要按钮</limy-button>
+        <sn-button>默认按钮</sn-button>
+        <sn-button type="danger">危险按钮</sn-button>
+        <sn-button type="warning">警告按钮</sn-button>
+        <sn-button type="info">信息按钮</sn-button>
+        <sn-button type="primary">主要按钮</sn-button>
       </li>
       <li>
         <h2>禁用状态</h2>
-        <limy-button type="primary" disabled>禁用按钮</limy-button>
-        <limy-button type="info" disabled>禁用按钮</limy-button>
+        <sn-button type="primary" disabled>禁用按钮</sn-button>
+        <sn-button type="info" disabled>禁用按钮</sn-button>
       </li>
       <li>
         <h2>按钮形状</h2>
-        <limy-button type="primary" shape="default">默认按钮</limy-button>
-        <limy-button type="primary" shape="square">方形按钮</limy-button>
-        <limy-button type="primary" shape="round">圆角按钮</limy-button>
+        <sn-button type="primary" shape="default">默认按钮</sn-button>
+        <sn-button type="primary" shape="square">方形按钮</sn-button>
+        <sn-button type="primary" shape="round">圆角按钮</sn-button>
       </li>
     </ul>
   </div>

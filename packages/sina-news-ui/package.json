@@ -6,6 +6,9 @@
   "homepage": "",
   "license": "ISC",
   "main": "lib/index.js",
+  "maintainers": [
+    "mingyu6"
+  ],
   "files": [
     "lib"
   ],
@@ -27,5 +30,6 @@
     "@mfelibs/sina-news-ui-cli": "^0.0.2-0",
     "@types/webpack-dev-server": "^4.5.0",
     "@types/webpack-env": "^1.16.3"
-  }
+  },
+  "gitHead": "5ccacccf193d66cdba0f4cb82ccca5c80a02a5a6"
 }

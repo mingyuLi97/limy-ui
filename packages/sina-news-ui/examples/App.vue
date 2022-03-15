@@ -1,6 +1,6 @@
 <template>
   <div>
-    <LimyTab v-if="!isIframe" :titles="titles" @slide-change="onSlideChange" />
+    <sn-tab v-if="!isIframe" :titles="titles" @slide-change="onSlideChange" />
     <keep-alive>
       <router-view />
     </keep-alive>

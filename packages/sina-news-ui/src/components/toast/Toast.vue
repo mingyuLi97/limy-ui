@@ -36,7 +36,7 @@ export default class Toast extends Vue {
   }
 
   get b() {
-    return createBEM('limy-toast');
+    return createBEM('sn-toast');
   }
 
   get hideTransition() {

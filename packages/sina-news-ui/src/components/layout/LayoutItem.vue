@@ -18,7 +18,7 @@ export default class LayoutItem extends Vue {
   @Prop({ required: false, type: Number, default: 0 }) offset: number;
 
   get b() {
-    return createBEM('limy-layout');
+    return createBEM('sn-layout');
   }
   get classes() {
     const { b, span, offset } = this;

@@ -52,7 +52,7 @@ export default class Layout extends Vue {
   }
 
   get b() {
-    return createBEM('limy-layout');
+    return createBEM('sn-layout');
   }
 
   mounted() {

@@ -23,7 +23,7 @@ export default class Simulator extends Vue {
   }
 
   get b() {
-    return createBEM('limy-doc-simulator');
+    return createBEM('sn-doc-simulator');
   }
 
   @Watch('$route')

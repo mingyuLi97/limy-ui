@@ -63,7 +63,7 @@ export default class Button extends Vue {
   }
 
   get b() {
-    return createBEM('limy-button');
+    return createBEM('sn-button');
   }
 }
 </script>

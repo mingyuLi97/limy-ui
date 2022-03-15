@@ -18,7 +18,7 @@ import { createBEM } from '~/utils/create/bem';
 @Component
 export default class DocContainer extends Vue {
   get b() {
-    return createBEM('limy-doc-container');
+    return createBEM('sn-doc-container');
   }
 }
 </script>

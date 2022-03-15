@@ -25,7 +25,7 @@ import { createBEM } from '~/utils/create/bem';
 @Component
 export default class NavBar extends Vue {
   get b() {
-    return createBEM('limy-doc-nav');
+    return createBEM('sn-doc-nav');
   }
 
   get currentPath(): string {

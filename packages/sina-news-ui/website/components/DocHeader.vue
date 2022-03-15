@@ -1,6 +1,6 @@
 <template>
   <div :class="b()">
-    <span>Limy ui</span>
+    <span>sn ui</span>
   </div>
 </template>
 
@@ -11,7 +11,7 @@ import { createBEM } from '~/utils/create/bem';
 @Component
 export default class DocHeader extends Vue {
   get b() {
-    return createBEM('limy-doc-header');
+    return createBEM('sn-doc-header');
   }
 }
 </script>

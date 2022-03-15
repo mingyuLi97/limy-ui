@@ -1,5 +1,5 @@
 <template>
-  <div class="limy-doc">
+  <div class="sn-doc">
     <DocHeader />
     <NavBar />
     <DocContainer />

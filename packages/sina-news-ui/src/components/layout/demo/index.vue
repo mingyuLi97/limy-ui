@@ -40,7 +40,7 @@ export default class Index extends Vue {}
 </script>
 
 <style lang="scss" scoped>
-.limy-layout__col {
+.sn-layout__col {
   // background-color: skyblue;
   overflow: hidden;
   word-break: break-all;

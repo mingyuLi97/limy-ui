@@ -40,7 +40,7 @@ export default class Tab extends Vue {
   }
 
   get b() {
-    return createBEM('limy-tab');
+    return createBEM('sn-tab');
   }
 
   activeIndex: number = 0;
