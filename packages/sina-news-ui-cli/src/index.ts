@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import program from 'commander';
+import { program } from 'commander';
 import serve from './commands/serve';
 import create from './commands/create';
 // import generateMarkdown from '../build/lib/gen-md';

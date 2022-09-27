@@ -20,7 +20,7 @@ export default class Layout extends Vue {
    */
   @Prop({
     default: 'start',
-    validator: v =>
+    validator: (v: string) =>
       ['end', 'center', 'space-around', 'space-between', 'start'].includes(v)
   })
   justify!: string;
@@ -30,7 +30,7 @@ export default class Layout extends Vue {
    */
   @Prop({
     default: 'center',
-    validator: v => ['start', 'center', 'end'].includes(v)
+    validator: (v: string) => ['start', 'center', 'end'].includes(v)
   })
   align!: string;
 

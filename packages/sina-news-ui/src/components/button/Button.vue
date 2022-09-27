@@ -24,7 +24,7 @@ export default class Button extends Vue {
   @Prop({
     type: String,
     default: 'default',
-    validator: v =>
+    validator: (v: string) =>
       ['default', 'primary', 'info', 'warning', 'danger'].includes(v)
   })
   type!: 'default' | 'primary' | 'info' | 'warning' | 'danger';
@@ -45,7 +45,7 @@ export default class Button extends Vue {
   @Prop({
     type: String,
     default: 'default',
-    validator: v => ['default', 'round', 'square'].includes(v)
+    validator: (v: string) => ['default', 'round', 'square'].includes(v)
   })
   shape!: 'square' | 'round' | 'default';
 

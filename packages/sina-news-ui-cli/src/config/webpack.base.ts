@@ -22,16 +22,16 @@ const baseConfig: Webpack.Configuration = {
       {
         test: /\.(css|scss)$/,
         use: [
-          'style-loader',
+          require.resolve('style-loader'),
           {
-            loader: 'css-loader',
+            loader: require.resolve('css-loader'),
             options: {
               importLoaders: 1,
               esModule: false // css-loader 在解析 css文件的 url 时会当作 require，因为 css文件中不能使用 default 所以需要配置
             }
           },
           {
-            loader: 'postcss-loader',
+            loader: require.resolve('postcss-loader'),
             options: {
               postcssOptions: {
                 plugins: ['postcss-preset-env']
@@ -39,7 +39,7 @@ const baseConfig: Webpack.Configuration = {
             }
           },
           {
-            loader: 'sass-loader'
+            loader: require.resolve('sass-loader')
           }
         ]
       },
@@ -47,7 +47,7 @@ const baseConfig: Webpack.Configuration = {
         test: /\.(png|svg|gif|jpe?g)$/,
         use: [
           {
-            loader: 'url-loader', // 可以把图片转换为 base64，不在limit限制的自动调用 file-loader
+            loader: require.resolve('url-loader'), // 可以把图片转换为 base64，不在limit限制的自动调用 file-loader
             options: {
               limit: 1024 * 4,
               name: 'img/[name].[hash:6].[ext]' // 设置输出文件的名称
@@ -58,13 +58,17 @@ const baseConfig: Webpack.Configuration = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: ['babel-loader']
+        use: [
+          {
+            loader: require.resolve('babel-loader')
+          }
+        ]
       },
       {
         test: /\.ts$/,
         use: [
           {
-            loader: 'ts-loader',
+            loader: require.resolve('ts-loader'),
             options: {
               // 处理 .vue 文件中的 <script lang="ts">
               appendTsSuffixTo: [/\.vue$/]
@@ -74,7 +78,7 @@ const baseConfig: Webpack.Configuration = {
       },
       {
         test: /\.vue$/,
-        use: ['vue-loader']
+        use: [require.resolve('vue-loader')]
       }
     ]
   },

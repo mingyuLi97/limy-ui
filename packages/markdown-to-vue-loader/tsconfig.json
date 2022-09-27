@@ -10,7 +10,7 @@
     "noUnusedParameters": false,
     "allowSyntheticDefaultImports": true,
     "sourceMap": false,
-    "target": "es2017",
+    "target": "ES2015",
     "esModuleInterop": true,
     "incremental": false
   },

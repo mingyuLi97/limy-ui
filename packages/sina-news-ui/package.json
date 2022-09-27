@@ -26,10 +26,8 @@
     "vue-property-decorator": "^9.1.2",
     "vue-router": "^3.5.3"
   },
+  "gitHead": "0535dc4f1ca532ed0e492ec9dc629fe59e7ebd81",
   "devDependencies": {
-    "@mfelibs/sina-news-ui-cli": "^0.0.4",
-    "@types/webpack-dev-server": "^4.5.0",
-    "@types/webpack-env": "^1.16.3"
-  },
-  "gitHead": "0535dc4f1ca532ed0e492ec9dc629fe59e7ebd81"
+    "@mfelibs/sina-news-ui-cli": "workspace:*"
+  }
 }

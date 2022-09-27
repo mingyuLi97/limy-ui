@@ -31,7 +31,7 @@ import 'swiper/css/swiper.css';
 })
 export default class Tab extends Vue {
   @Prop({ required: true, type: Array }) titles: string[];
-  @Prop({ type: Number, default: 0, validator: v => v >= 0 })
+  @Prop({ type: Number, default: 0, validator: (v: number) => v >= 0 })
   initialSlide: number;
 
   get classes() {
