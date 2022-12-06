@@ -68,8 +68,8 @@ importers:
     specifiers:
       '@babel/core': ^7.19.1
       '@babel/preset-env': ^7.19.1
-      '@mfelibs/markdown-to-vue-loader': ^1.0.4
-      '@mfelibs/vue-to-markdown': ^1.0.4
+      '@mfelibs/markdown-to-vue-loader': workspace:*
+      '@mfelibs/vue-to-markdown': workspace:*
       babel-loader: ^8.2.5
       chalk: ^4
       commander: ^8.3.0

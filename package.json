@@ -8,9 +8,9 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "dev": "yarn workspace @mfelibs/sina-news-ui run dev",
-    "dev:doc": "yarn workspace @mfelibs/sina-news-ui run dev:doc",
-    "build:all": ""
+    "dev": "pnpm --filter @mfelibs/sina-news-ui run dev",
+    "dev:doc": "pnpm --filter @mfelibs/sina-news-ui run dev:doc",
+    "build:all": "pnpm -r run build"
   },
   "workspaces": [
     "packages/*"

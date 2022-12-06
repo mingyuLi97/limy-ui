@@ -32,7 +32,7 @@ export const getWebsiteDevConfig = () => {
       rules: [
         {
           test: /\.md$/,
-          use: ['vue-loader', '@mfelibs/markdown-to-vue-loader']
+          use: [require.resolve('vue-loader'), require.resolve('@mfelibs/markdown-to-vue-loader')]
         }
       ]
     },
